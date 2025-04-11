@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://gljbksc5gneh"]
+
+[ext_resource type="Script" uid="uid://c6sqfdo01af2q" path="res://script/field.gd" id="1_ttalb"]
+[ext_resource type="Texture2D" uid="uid://cdjix3f0ry5me" path="res://icon.svg" id="2_lptdg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7156t"]
+size = Vector2(100, 100)
+
+[node name="Field" type="Area2D"]
+script = ExtResource("1_ttalb")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.14902)
+texture = ExtResource("2_lptdg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7156t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

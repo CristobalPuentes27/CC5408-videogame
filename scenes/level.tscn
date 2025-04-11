@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwgr7v7wkasam"]
+
+[ext_resource type="PackedScene" uid="uid://cb3wju8hkg1vg" path="res://scenes/player.tscn" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://cnopgl0urb8ho" path="res://scenes/plataform.tscn" id="2_w8frs"]
+[ext_resource type="PackedScene" uid="uid://gljbksc5gneh" path="res://scenes/field.tscn" id="3_w8frs"]
+
+[node name="Level" type="Node2D"]
+
+[node name="PLayer" parent="." instance=ExtResource("1_w7c3h")]
+position = Vector2(326, 264)
+
+[node name="Plataform" parent="." instance=ExtResource("2_w8frs")]
+position = Vector2(340, 529)
+
+[node name="Field" parent="." instance=ExtResource("3_w8frs")]
+position = Vector2(523, 426)
+scale = Vector2(2, 2)
+
+[node name="Plataform2" parent="." instance=ExtResource("2_w8frs")]
+position = Vector2(518, 332)
