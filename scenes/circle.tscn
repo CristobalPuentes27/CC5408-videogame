@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://tv2bocb32hys"]
+
+[ext_resource type="Texture2D" uid="uid://dbhyps7qhgn1o" path="res://assets/Reploid_Pack1_Free/Animations/GoldRing/GoldRing_Icon_RP1 (16x16).png" id="1_wcjn7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_opnif"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wcjn7"]
+radius = 223.43
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+modulate = Color(1, 0.0117647, 1, 1)
+physics_material_override = SubResource("PhysicsMaterial_opnif")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-9, 32)
+shape = SubResource("CircleShape2D_wcjn7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(-5.00002, 1.5)
+scale = Vector2(41, 37.9375)
+texture = ExtResource("1_wcjn7")
