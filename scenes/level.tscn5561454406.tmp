@@ -33,7 +33,7 @@ position = Vector2(-432, 381)
 scale = Vector2(10, 1)
 
 [node name="Area2D" parent="." instance=ExtResource("10_olg7q")]
-vector = Vector2(0, 300)
+vector = Vector2(0, 11000)
 charge = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
