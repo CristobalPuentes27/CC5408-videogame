@@ -47,3 +47,11 @@ func _physics_process(delta: float) -> void:
  	
 	
 	move_and_slide()
+#func setForce(x: int, y: int, other_charge: int) -> void:
+	#print("Entro")
+	#electric_force = -Vector2(x, y) * charge * other_charge
+	#pass
+#
+#func resetForce() -> void:
+	#print("Salio")
+	#electric_force = Vector2(0, 0)

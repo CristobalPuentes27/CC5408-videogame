@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://pcdbqy57b2m2"]
+
+[ext_resource type="Script" uid="uid://iix780band1c" path="res://script/fields/ejemplo1.gd" id="1_summw"]
+[ext_resource type="PackedScene" uid="uid://gljbksc5gneh" path="res://scenes/field.tscn" id="2_lqlnm"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_summw")
+
+[node name="Field" parent="." instance=ExtResource("2_lqlnm")]
