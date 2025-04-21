@@ -38,6 +38,7 @@ func _physics_process(delta: float) -> void:
 func setForce(vector:Vector2 , other_charge: int) -> void:
 	print("Entro")
 	jump_charge*=other_charge
+	#charge*=other_charge
 	electric_force = vector  * charge * other_charge
 	pass
 

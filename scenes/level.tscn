@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwgr7v7wkasam"]
+[gd_scene load_steps=11 format=3 uid="uid://dwgr7v7wkasam"]
 
 [ext_resource type="PackedScene" uid="uid://cnopgl0urb8ho" path="res://scenes/plataform.tscn" id="2_w8frs"]
 [ext_resource type="PackedScene" uid="uid://dc1laol4lhlyg" path="res://scenes/playerV2.tscn" id="3_mx8sn"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cb3wju8hkg1vg" path="res://scenes/player.tscn" id="5_ppgk2"]
 [ext_resource type="Script" uid="uid://b10eul00oa0s1" path="res://scenes/ejemplo2.gd" id="6_2r41h"]
 [ext_resource type="PackedScene" uid="uid://pcdbqy57b2m2" path="res://scenes/fields/ejemplo1.tscn" id="7_klq6b"]
+[ext_resource type="Script" uid="uid://b4g6gl5m8q0e8" path="res://script/Zona.gd" id="8_b121j"]
+[ext_resource type="PackedScene" uid="uid://nuxnaplm734d" path="res://scenes/chargedArea.tscn" id="10_olg7q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1rx8"]
+radius = 216.28
 
 [node name="Level" type="Node2D"]
 
@@ -30,7 +35,7 @@ position = Vector2(89, 1096)
 position = Vector2(302, 466)
 
 [node name="Plataform3" parent="." instance=ExtResource("2_w8frs")]
-position = Vector2(-261, 577)
+position = Vector2(-254, 843)
 scale = Vector2(10, 1)
 
 [node name="Field2" parent="." instance=ExtResource("3_w8frs")]
@@ -52,7 +57,31 @@ position = Vector2(-432, 381)
 scale = Vector2(10, 1)
 
 [node name="Node2D5" parent="." instance=ExtResource("7_klq6b")]
-position = Vector2(60, 63)
+position = Vector2(-122, 680)
+scale = Vector2(2, 2)
+charge = -1
+vector = Vector2(10000, 3000)
 
 [node name="Node2D6" parent="." instance=ExtResource("7_klq6b")]
-position = Vector2(-76, 487)
+position = Vector2(-742, 515)
+
+[node name="Zona" type="Node2D" parent="."]
+script = ExtResource("8_b121j")
+vector = Vector2(0, 10)
+metadata/_custom_type_script = "uid://b4g6gl5m8q0e8"
+
+[node name="Field" parent="Zona" instance=ExtResource("3_w8frs")]
+position = Vector2(-730, 717)
+scale = Vector2(2, 2)
+
+[node name="Field3" parent="." instance=ExtResource("3_w8frs")]
+position = Vector2(171, 742)
+charge = -1
+
+[node name="Area2D" parent="." instance=ExtResource("10_olg7q")]
+vector = Vector2(0, 11000)
+charge = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(471, 842)
+shape = SubResource("CircleShape2D_t1rx8")
