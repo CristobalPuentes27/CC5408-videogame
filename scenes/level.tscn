@@ -14,9 +14,11 @@ size = Vector2(191, 145)
 
 [node name="Plataform" parent="." instance=ExtResource("2_w8frs")]
 position = Vector2(-147, 726)
+collision_layer = 4
 
 [node name="Plataform2" parent="." instance=ExtResource("2_w8frs")]
 position = Vector2(518, 332)
+collision_layer = 4
 
 [node name="PLayer" parent="." instance=ExtResource("5_ppgk2")]
 position = Vector2(302, 466)
@@ -27,10 +29,12 @@ zoom = Vector2(2, 2)
 [node name="Plataform3" parent="." instance=ExtResource("2_w8frs")]
 position = Vector2(-254, 843)
 scale = Vector2(10, 1)
+collision_layer = 4
 
 [node name="Plataform4" parent="." instance=ExtResource("2_w8frs")]
 position = Vector2(-432, 381)
 scale = Vector2(10, 1)
+collision_layer = 4
 
 [node name="Area2D" parent="." instance=ExtResource("10_olg7q")]
 vector = Vector2(0, 300)

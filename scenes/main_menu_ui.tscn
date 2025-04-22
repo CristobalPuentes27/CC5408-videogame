@@ -37,7 +37,8 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test Subject"
+text = "Biot-Savart
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 

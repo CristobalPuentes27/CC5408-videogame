@@ -4,12 +4,15 @@ extends CharacterBody2D
 @onready var raycast_up: RayCast2D = $RayCast2D
 @onready var raycast_down: RayCast2D = $RayCast2D2
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var charge_label: Label = $"CanvasLayer/Charge Label"
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var jump_dir = 1
 var charge: int = 1
 var electric_force = Vector2(0, 1000)
+
+signal charge_changed(new_charge: int, player: Player)
 
 func _physics_process(delta: float) -> void:
 	# Gravity.
@@ -44,20 +47,23 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	if raycast_up.is_colliding():
-		var normal = raycast_up.get_collision_normal()
-		rotation = normal.angle() + PI / 2
+		self.scale.y *= -1
 		jump_dir *= -1
 		
 	# Invert charge
 	if Input.is_action_just_pressed("invert"):
 		charge*=-1
-		
+		emit_signal("charge_changed", charge, self)
+		if charge == -1:
+			charge_label.text = "Charge (-)"
+		else:
+			charge_label.text = "Charge (+)"
+
 	move_and_slide()
 
 func setForce(vector:Vector2 , other_charge: int) -> void:
 	print("Entro")
 	electric_force = vector  * charge * other_charge
-	pass
 
 func resetForce() -> void:
 	print("Salio")
