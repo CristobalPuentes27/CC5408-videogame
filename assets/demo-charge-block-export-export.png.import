@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpnaaqhs1dhue"
-path="res://.godot/imported/Character_SpriteSheet_RP1_free (40x40).png-58182371fcc8ea909eb0ab68e25f5743.ctex"
+uid="uid://dm4hvi6ufda10"
+path="res://.godot/imported/demo-charge-block-export-export.png-6ad6e518c44280321ca7ef7dec1b3df9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Reploid_Pack/Animations/MainCharacter/Character_SpriteSheet_RP1_free (40x40).png"
-dest_files=["res://.godot/imported/Character_SpriteSheet_RP1_free (40x40).png-58182371fcc8ea909eb0ab68e25f5743.ctex"]
+source_file="res://assets/demo-charge-block-export-export.png"
+dest_files=["res://.godot/imported/demo-charge-block-export-export.png-6ad6e518c44280321ca7ef7dec1b3df9.ctex"]
 
 [params]
 

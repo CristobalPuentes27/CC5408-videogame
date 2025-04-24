@@ -19,7 +19,7 @@ func _on_start_pressed() -> void:
 func _on_credit_pressed() -> void:
 	pass
 	#SoundManager.play_select_sound()
-	#get_tree().change_scene_to_file("res://scenes/credits_menu_ui.tscn")
+	get_tree().change_scene_to_file("res://scenes/credits_menu_ui.tscn")
 	
 func _on_quit_pressed() -> void:
 	get_tree().quit()

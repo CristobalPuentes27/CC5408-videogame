@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh5syx86yqtgu"]
+
+[ext_resource type="Script" path="res://script/deathzone.gd" id="1_2wctw"]
+
+[node name="Deathzone" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_2wctw")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

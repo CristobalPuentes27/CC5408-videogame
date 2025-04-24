@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpnaaqhs1dhue"
-path="res://.godot/imported/Character_SpriteSheet_RP1_free (40x40).png-58182371fcc8ea909eb0ab68e25f5743.ctex"
+uid="uid://cqmxufp2cpyd8"
+path="res://.godot/imported/cazuela-logo.png-3f5c9bab706a23f5f24552e2c41221c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Reploid_Pack/Animations/MainCharacter/Character_SpriteSheet_RP1_free (40x40).png"
-dest_files=["res://.godot/imported/Character_SpriteSheet_RP1_free (40x40).png-58182371fcc8ea909eb0ab68e25f5743.ctex"]
+source_file="res://assets/Cazuela_Logo/cazuela-logo.png"
+dest_files=["res://.godot/imported/cazuela-logo.png-3f5c9bab706a23f5f24552e2c41221c2.ctex"]
 
 [params]
 
