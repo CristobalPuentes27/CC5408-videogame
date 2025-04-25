@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY * jump_dir
 
 	# Direction.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("move_left", "move_right")
 	
 	# Sprite Direction.
 	if direction < 0:
