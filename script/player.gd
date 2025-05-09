@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 		#and ((electric_force.y<0 and charge>0) or (electric_force.y>0 and charge<0))
 	if (raycast_up.is_colliding() and inCharge) :
 		
-		rotar(180,1)
+		self.scale.y*=-1
 		jump_dir *= -1
 	#if	(!inCharge and electric_force.y>0):
 		#
@@ -111,6 +111,8 @@ func resetForce() -> void:
 	inCharge=false
 	await get_tree().create_timer(.1).timeout
 	rotar(180,1)
+	#self.scale.y=1
+	#rotar(180,1)
 	jump_dir = 1
 	print("Salio")
 func rotar(angulo_en_grados: float, tiempo_en_segundos: float) -> void:
@@ -118,11 +120,13 @@ func rotar(angulo_en_grados: float, tiempo_en_segundos: float) -> void:
 	var angulo_inicial = rotation
 	var diferencia = wrapf(angulo_objetivo - angulo_inicial, -PI, PI)
 	var velocidad = diferencia / tiempo_en_segundos
+	while await get_tree().create_timer(tiempo_en_segundos).timeout:
+		rotation += velocidad
+	rotation = angulo_objetivo
+	#nodo.connect(signal_name, Callable(self, "_on_signal"))
+	
 
-	var tiempo_transcurrido = 0.0
-
-	while tiempo_transcurrido < tiempo_en_segundos:
-		var delta = await get_tree().process_frame
-		tiempo_transcurrido += delta
-		rotation = angulo_inicial + velocidad * tiempo_transcurrido
-	rotation = angulo_objetivo  # Corrige para precisión exacta
+	
+	
+		
+		  # Corrige para precisión exacta
