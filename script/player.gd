@@ -14,7 +14,7 @@ var jump_dir = 1
 var electric_force = Vector2(0, 1000)
 @export var health = 100
 var is_dead = false
-
+var inCharge=false
 signal charge_changed(new_charge: int, player: Player)
 
 func _ready() -> void:
@@ -59,11 +59,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	if raycast_up.is_colliding():
-		self.scale.y *= -1
-		jump_dir *= -1
+		#and ((electric_force.y<0 and charge>0) or (electric_force.y>0 and charge<0))
+	if (raycast_up.is_colliding() and inCharge) :
 		
+		rotar(180,1)
+		jump_dir *= -1
+	#if	(!inCharge and electric_force.y>0):
+		#
+		#self.scale.y = -1
+		#jump_dir = 1
 	# Invert charge
 	if Input.is_action_just_pressed("invert"):
 		charge*=-1
@@ -98,9 +102,27 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 # Set Electromagnetic Force
 func setForce(vector:Vector2 , other_charge: int) -> void:
+	inCharge=true
 	print("Entro")
 	electric_force = vector  * charge * other_charge
 
 func resetForce() -> void:
-	print("Salio")
 	electric_force =  Vector2(0, 1000)
+	inCharge=false
+	await get_tree().create_timer(.1).timeout
+	rotar(180,1)
+	jump_dir = 1
+	print("Salio")
+func rotar(angulo_en_grados: float, tiempo_en_segundos: float) -> void:
+	var angulo_objetivo = deg_to_rad(angulo_en_grados)
+	var angulo_inicial = rotation
+	var diferencia = wrapf(angulo_objetivo - angulo_inicial, -PI, PI)
+	var velocidad = diferencia / tiempo_en_segundos
+
+	var tiempo_transcurrido = 0.0
+
+	while tiempo_transcurrido < tiempo_en_segundos:
+		var delta = await get_tree().process_frame
+		tiempo_transcurrido += delta
+		rotation = angulo_inicial + velocidad * tiempo_transcurrido
+	rotation = angulo_objetivo  # Corrige para precisión exacta
