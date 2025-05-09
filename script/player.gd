@@ -98,9 +98,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 # Set Electromagnetic Force
 func setForce(vector:Vector2 , other_charge: int) -> void:
-	print("Entro")
+	#print("Entro")
 	electric_force = vector  * charge * other_charge
 
 func resetForce() -> void:
-	print("Salio")
+	#print("Salio")
 	electric_force =  Vector2(0, 1000)

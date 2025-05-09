@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bny0qsgrk2u5k"]
+[gd_scene load_steps=19 format=4 uid="uid://bny0qsgrk2u5k"]
 
 [ext_resource type="Texture2D" uid="uid://btique2dtnlwj" path="res://assets/Reploid_Pack/TileSets/Midground_RP1 (16x16).png" id="1_etyyu"]
 [ext_resource type="TileSet" uid="uid://dcg8tygx221kj" path="res://themes/background.tres" id="1_freo2"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://nuxnaplm734d" path="res://scenes/chargedArea.tscn" id="3_fxo6y"]
 [ext_resource type="PackedScene" uid="uid://pdpsv78yw6fy" path="res://scenes/pause_menu_ui.tscn" id="6_fmty4"]
 [ext_resource type="PackedScene" uid="uid://dh5syx86yqtgu" path="res://scenes/Deathzone.tscn" id="7_i46ye"]
+[ext_resource type="PackedScene" uid="uid://7oo44rorgnj" path="res://scenes/platform.tscn" id="9_88xa8"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxo6y"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88xa8"]
 texture = ExtResource("1_etyyu")
 1:1/0 = 0
 1:1/0/terrain_set = 0
@@ -382,7 +383,7 @@ physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.581397, 0.00126151, 0.733576, 1)
-sources/0 = SubResource("TileSetAtlasSource_fxo6y")
+sources/0 = SubResource("TileSetAtlasSource_88xa8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0bg5e"]
 texture = ExtResource("2_2vmhc")
@@ -481,3 +482,6 @@ debug_color = Color(0.993898, 0, 0.230606, 0.42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone2"]
 position = Vector2(1001, 187)
 shape = SubResource("WorldBoundaryShape2D_i46ye")
+
+[node name="Platform" parent="." instance=ExtResource("9_88xa8")]
+position = Vector2(-72, -64)
