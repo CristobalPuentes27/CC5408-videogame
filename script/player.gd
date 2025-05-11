@@ -95,26 +95,18 @@ func _physics_process(delta: float) -> void:
 # Death
 func take_damage():
 	health = 0
-	
+
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "death":
 		get_tree().reload_current_scene()
 
 # Set Electromagnetic Force
 func setForce(vector:Vector2 , other_charge: int) -> void:
-<<<<<<< HEAD
-	#print("Entro")
-	electric_force = vector  * charge * other_charge
-
-func resetForce() -> void:
-	#print("Salio")
-=======
 	inCharge=true
 	print("Entro")
 	electric_force = vector  * charge * other_charge
 
 func resetForce() -> void:
->>>>>>> 05b566b070fa73700b5906e174924cb0347dc3ae
 	electric_force =  Vector2(0, 1000)
 	inCharge=false
 	await get_tree().create_timer(.1).timeout
@@ -123,6 +115,7 @@ func resetForce() -> void:
 	#rotar(180,1)
 	jump_dir = 1
 	print("Salio")
+
 func rotar(angulo_en_grados: float, tiempo_en_segundos: float) -> void:
 	var angulo_objetivo = deg_to_rad(angulo_en_grados)
 	var angulo_inicial = rotation
@@ -132,9 +125,6 @@ func rotar(angulo_en_grados: float, tiempo_en_segundos: float) -> void:
 		rotation += velocidad
 	rotation = angulo_objetivo
 	#nodo.connect(signal_name, Callable(self, "_on_signal"))
-	
-
-	
 	
 		
 		  # Corrige para precisión exacta

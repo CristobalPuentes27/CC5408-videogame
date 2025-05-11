@@ -9,20 +9,21 @@ var tiempo: float = 0
 
 func _ready() -> void:
 	pos1 = self.position
-	pos2 = pos1 + Vector2(100, 0)
+	pos2 = pos1 + Vector2(100, -50)
 
 func _process(delta: float) -> void:
 	
 	if self.position == pos1:
-		from = pos1
-		to = pos2
-		tiempo = 0
-	elif self.position == pos2:
-		from = pos2
-		to = pos1
-		tiempo = 0
+		_changeDirection(pos1, pos2)
+	if self.position == pos2:
+		_changeDirection(pos2, pos1)
 	
 	tiempo = min(tiempo+delta, 1)
 	
 	self.position = tiempo * to + (1 - tiempo) * from
 	#print(self.position)
+
+func _changeDirection(last: Vector2, new: Vector2) -> void:
+	from = last
+	to = new
+	tiempo = 0
