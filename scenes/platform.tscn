@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://7oo44rorgnj"]
 
 [ext_resource type="Texture2D" uid="uid://btique2dtnlwj" path="res://assets/Reploid_Pack/TileSets/Midground_RP1 (16x16).png" id="1_ba0x2"]
-[ext_resource type="Script" uid="uid://cq06qowyrelom" path="res://script/movile_platform.gd" id="2_nlgqw"]
+[ext_resource type="Script" uid="uid://8medqtlto82y" path="res://script/platforms/circular_platform.gd" id="2_nlgqw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nlgqw"]
 texture = ExtResource("1_ba0x2")
