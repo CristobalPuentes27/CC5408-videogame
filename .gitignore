@@ -1,3 +1,13 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
+# Godot 4+ ignores
+export_presets.cfg
+*.tmp
+*.log
+_crash.dmp
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+/export/
+/build/
+/bin/
+shader_cache/

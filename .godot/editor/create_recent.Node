@@ -1,0 +1,13 @@
+TileMapLayer
+CollisionShape2D
+CanvasLayer
+Label
+RayCast2D
+Camera2D
+StaticBody2D
+Area2D
+AnimatedSprite2D
+Button
+VBoxContainer
+MarginContainer
+PanelContainer

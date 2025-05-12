@@ -59,16 +59,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-<<<<<<< HEAD
-		#and ((electric_force.y<0 and charge>0) or (electric_force.y>0 and charge<0))
-	if (raycast_up.is_colliding() and inCharge) :
-		
-		self.scale.y*=-1
-=======
 
 	if raycast_up.is_colliding():
 		self.scale.y *= -1
->>>>>>> parent of 2a26809 (fix:rotation player error)
 		jump_dir *= -1
 		
 	# Invert charge
@@ -109,29 +102,5 @@ func setForce(vector:Vector2 , other_charge: int) -> void:
 	electric_force = vector  * charge * other_charge
 
 func resetForce() -> void:
-<<<<<<< HEAD
-	electric_force =  Vector2(0, 1000)
-	inCharge=false
-	await get_tree().create_timer(.1).timeout
-	rotar(180,1)
-	#self.scale.y=1
-	#rotar(180,1)
-	jump_dir = 1
-	print("Salio")
-
-func rotar(angulo_en_grados: float, tiempo_en_segundos: float) -> void:
-	var angulo_objetivo = deg_to_rad(angulo_en_grados)
-	var angulo_inicial = rotation
-	var diferencia = wrapf(angulo_objetivo - angulo_inicial, -PI, PI)
-	var velocidad = diferencia / tiempo_en_segundos
-	while await get_tree().create_timer(tiempo_en_segundos).timeout:
-		rotation += velocidad
-	rotation = angulo_objetivo
-	#nodo.connect(signal_name, Callable(self, "_on_signal"))
-	
-		
-		  # Corrige para precisión exacta
-=======
 	print("Salio")
 	electric_force =  Vector2(0, 1000)
->>>>>>> parent of 2a26809 (fix:rotation player error)
