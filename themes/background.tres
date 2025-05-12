@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://ckr34ht2qcvhl"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dcg8tygx221kj"]
 
 [ext_resource type="Texture2D" uid="uid://ec4pj6cyxbcy" path="res://assets/Reploid_Pack/TileSets/BackGround1_RP1 (16x16).png" id="1_06dgy"]
 [ext_resource type="Texture2D" uid="uid://bqhwsy4vuiob5" path="res://assets/Reploid_Pack/TileSets/BackGround2_RP1 (16x16).png" id="2_iw1l0"]

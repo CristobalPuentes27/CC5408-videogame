@@ -14,7 +14,7 @@ var jump_dir = 1
 var electric_force = Vector2(0, 1000)
 @export var health = 100
 var is_dead = false
-var inCharge=false
+
 signal charge_changed(new_charge: int, player: Player)
 
 func _ready() -> void:
@@ -59,15 +59,18 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+<<<<<<< HEAD
 		#and ((electric_force.y<0 and charge>0) or (electric_force.y>0 and charge<0))
 	if (raycast_up.is_colliding() and inCharge) :
 		
 		self.scale.y*=-1
+=======
+
+	if raycast_up.is_colliding():
+		self.scale.y *= -1
+>>>>>>> parent of 2a26809 (fix:rotation player error)
 		jump_dir *= -1
-	#if	(!inCharge and electric_force.y>0):
-		#
-		#self.scale.y = -1
-		#jump_dir = 1
+		
 	# Invert charge
 	if Input.is_action_just_pressed("invert"):
 		charge*=-1
@@ -102,11 +105,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 # Set Electromagnetic Force
 func setForce(vector:Vector2 , other_charge: int) -> void:
-	inCharge=true
 	print("Entro")
 	electric_force = vector  * charge * other_charge
 
 func resetForce() -> void:
+<<<<<<< HEAD
 	electric_force =  Vector2(0, 1000)
 	inCharge=false
 	await get_tree().create_timer(.1).timeout
@@ -128,3 +131,7 @@ func rotar(angulo_en_grados: float, tiempo_en_segundos: float) -> void:
 	
 		
 		  # Corrige para precisión exacta
+=======
+	print("Salio")
+	electric_force =  Vector2(0, 1000)
+>>>>>>> parent of 2a26809 (fix:rotation player error)
