@@ -1,0 +1,29 @@
+extends AnimatableBody2D
+
+
+var pos1: Vector2
+var pos2: Vector2
+var from: Vector2
+var to: Vector2
+var tiempo: float = 0
+
+func _ready() -> void:
+	pos1 = self.position
+	pos2 = pos1 + Vector2(200, 0)
+
+func _physics_process(delta: float) -> void:
+	
+	if self.position == pos1:
+		_changeDirection(pos1, pos2)
+	if self.position == pos2:
+		_changeDirection(pos2, pos1)
+	
+	tiempo = min(tiempo+delta, 1)
+	
+	self.position = tiempo * to + (1 - tiempo) * from
+	#print(self.position)
+
+func _changeDirection(last: Vector2, new: Vector2) -> void:
+	from = last
+	to = new
+	tiempo = 0

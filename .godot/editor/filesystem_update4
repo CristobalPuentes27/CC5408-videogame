@@ -9,3 +9,10 @@ res://scenes/platform.tscn
 res://script/movile_platform.gd
 res://themes/demo_level.tres
 res://scenes/player.tscn
+res://script/enemy.gd
+res://script/player.gd
+res://script/chargedbody.gd
+res://script/credits_menu_ui.gd
+res://script/main_menu_ui.gd
+res://script/pause_menu_ui.gd
+res://README.md
