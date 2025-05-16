@@ -1,4 +1,4 @@
-extends TileMapLayer
+extends AnimatableBody2D
 
 
 var pos1: Vector2
@@ -9,9 +9,9 @@ var tiempo: float = 0
 
 func _ready() -> void:
 	pos1 = self.position
-	pos2 = pos1 + Vector2(100, -50)
+	pos2 = pos1 + Vector2(200, 0)
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	if self.position == pos1:
 		_changeDirection(pos1, pos2)

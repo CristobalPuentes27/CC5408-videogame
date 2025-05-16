@@ -332,7 +332,7 @@ default_font = ExtResource("3_qhqgy")
 default_font_size = 30
 
 [node name="PLayer" type="CharacterBody2D"]
-collision_mask = 14
+collision_mask = 22
 script = ExtResource("1_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

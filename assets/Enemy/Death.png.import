@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm4hvi6ufda10"
-path="res://.godot/imported/demo-charge-block-export-export.png-6ad6e518c44280321ca7ef7dec1b3df9.ctex"
+uid="uid://c6da080dsnrd3"
+path="res://.godot/imported/Death.png-bedcfc8fa2ada60fac00e2596e0dbbc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/demo-charge-block-export-export.png"
-dest_files=["res://.godot/imported/demo-charge-block-export-export.png-6ad6e518c44280321ca7ef7dec1b3df9.ctex"]
+source_file="res://assets/Enemy/Death.png"
+dest_files=["res://.godot/imported/Death.png-bedcfc8fa2ada60fac00e2596e0dbbc5.ctex"]
 
 [params]
 

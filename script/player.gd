@@ -83,10 +83,13 @@ func _physics_process(delta: float) -> void:
 		is_dead = true
 		#SoundManager.play_player_death_sound()
 		set_physics_process(false)  # Detener el movimiento
-		collision_shape_2d.disabled = true  # Para evitar más colisiones
+		collision_shape_2d.disabled = true  # Evita colisiones
 		animated_sprite.play("death")
 
 	move_and_slide()
+
+func bounce():
+	velocity.y = JUMP_VELOCITY / 1.5
 
 # Death
 func take_damage():
