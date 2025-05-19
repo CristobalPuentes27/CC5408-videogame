@@ -11,7 +11,8 @@ const SPEED: float = 300.0
 const JUMP_VELOCITY: float = 400.0
 @export var health = 100
 @export var charge: int = 1
-var electric_force = Vector2(0, 1000)
+const default_electric_force = Vector2(0, 1000)
+var electric_force = default_electric_force
 var is_dead: bool = false
 var enable_rotation: bool = false
 var invert_move: int = 1
@@ -23,7 +24,7 @@ signal charge_changed(new_charge: int, player: Player)
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
-	raycast_force.enabled = false
+	#raycast_force.enabled = false
 
 func _physics_process(delta: float) -> void:
 	
@@ -36,6 +37,10 @@ func _physics_process(delta: float) -> void:
 		new_velocity += (electric_force) * delta
 	else:
 		new_velocity = Vector2(0, 0)
+	
+	#if raycast_force.is_colliding():
+		#enable_rotation = true
+		#raycast_force.enabled = false
 	
 	# Rotate Player to the opposit of the force 
 	if enable_rotation:
@@ -81,9 +86,6 @@ func _physics_process(delta: float) -> void:
 	if animated_sprite.animation != anim_to_play:
 		animated_sprite.play(anim_to_play)
 	
-	if raycast_force.is_colliding():
-		pass
-	
 	# Invert charge
 	if Input.is_action_just_pressed("invert"):
 		charge *= -1
@@ -109,7 +111,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func bounce() -> void:
-	velocity = JUMP_VELOCITY * jump_direction / 1.5
+	new_velocity = JUMP_VELOCITY * jump_direction / 1.5
 
 # Death
 func take_damage():
@@ -120,14 +122,17 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		get_tree().reload_current_scene()
 
 # Set Electromagnetic Force
-func setForce(vector:Vector2 , other_charge: int) -> void:
-	electric_force = vector * charge * other_charge
+func setForce(force:Vector2 , other_charge: int) -> void:
+	electric_force = force * charge * other_charge
+	#prepare_rotation(electric_force)
 	enable_rotation = true
 
 func resetForce() -> void:
-	electric_force = Vector2(0, 1000)
+	electric_force = default_electric_force
+	#prepare_rotation(default_electric_force)
 	enable_rotation = true
 
-func prepare_rotation(force: Vector2) -> void:
-	raycast_force.enabled = true
-	#raycast_force.rotate_toward(force.normalized().angle())
+#func prepare_rotation(force: Vector2) -> void:
+	#raycast_force.global_rotation = electric_force.normalized().angle()
+	#print(electric_force.normalized().angle())
+	#raycast_force.enabled = true
