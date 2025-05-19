@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1747408106
-Deathzone_enemy.gd::GDScript::451037718198679599::1747408056::0::1::::<>Deathzone<><>0<>0<><>::
+::res://::1747642539
+Deathzone_enemy.gd::GDScript/GDScript::451037718198679599::1747408056::0::1::::<>Deathzone<><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::5002515586826189380::1747408056::1747408056::1::::<><><>0<>0<>b512f72d1ac3a2f76c8bce70c6bdd070<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-README.md::TextFile::-1::1747408056::0::1::::<><><>0<>0<><>::
+README.md::TextFile/TextFile::-1::1747408056::0::1::::<><><>0<>0<><>::
 ::res://assets/::1747408056
 ::res://assets/Cazuela_Logo/::1747408056
 cazuela-logo.png::CompressedTexture2D/CompressedTexture2D::5922067892374027679::1747408056::1747408056::1::::<><><>0<>0<>bbdc4e4b94c782cc8933010946c9092a<>res://.godot/imported/cazuela-logo.png-3f5c9bab706a23f5f24552e2c41221c2.ctex::
@@ -19,7 +19,7 @@ Walk.png::CompressedTexture2D/CompressedTexture2D::8108811743526769243::17474080
 ::res://assets/Fonts/::1747408056
 m6x11plus.ttf::FontFile/FontFile::6474034202547006307::1747408056::1747408056::1::::<><><>0<>0<>5418941e349c971e2f7f111fd35c3bd1<>res://.godot/imported/m6x11plus.ttf-099c51307a1324e8701a0691d046e111.fontdata::
 ::res://assets/Reploid_Pack/::1747408056
-Personal Licence.txt::TextFile::-1::1747408056::0::1::::<><><>0<>0<><>::
+Personal Licence.txt::TextFile/TextFile::-1::1747408056::0::1::::<><><>0<>0<><>::
 ::res://assets/Reploid_Pack/Animations/::1747408056
 ::res://assets/Reploid_Pack/Animations/Collect item VFX/::1747408056
 CollectItem_RP1 (32x32).png::CompressedTexture2D/CompressedTexture2D::3309263421031314884::1747408056::1747408056::1::::<><><>0<>0<>4046e054dcfa7fb3346a0075b6975c21<>res://.godot/imported/CollectItem_RP1 (32x32).png-42c82d36ea993d30edff320ac8439688.ctex::
@@ -67,30 +67,30 @@ TileSet_RP1_Free (16x16).png::CompressedTexture2D/CompressedTexture2D::838036483
 Guide Background.png::CompressedTexture2D/CompressedTexture2D::928293053979576497::1747408056::1747408056::1::::<><><>0<>0<>e3d187870e10334bad4b08d0c9ddb162<>res://.godot/imported/Guide Background.png-849bc51597af9c38e77932324a92b590.ctex::
 Guide Midground.png::CompressedTexture2D/CompressedTexture2D::5951098667081788438::1747408056::1747408056::1::::<><><>0<>0<>55f176c748d5b68f7d976e9ed013583f<>res://.godot/imported/Guide Midground.png-150055666d55eb9f8176ec208f4432f4.ctex::
 ::res://document/::1747408056
-git_convention.md::TextFile::-1::1747408056::0::1::::<><><>0<>0<><>::
-::res://scenes/::1747408056
-chargedArea.tscn::PackedScene::955162252219191853::1747408056::0::1::::<><><>0<>0<><>::uid://cbeeuvhc3wj5m::::res://script/chargedbody.gd
-credits_menu_ui.tscn::PackedScene::7550674500415965639::1747408056::0::1::::<><><>0<>0<><>::uid://dvrlrw5011u4k::::res://themes/main_menu_ui.tres<>uid://c7mytdvqp03yw::::res://script/credits_menu_ui.gd
-Deathzone.tscn::PackedScene::7713652314547657292::1747408056::0::1::::<><><>0<>0<><>::uid://bq66e11hn4br4::::res://script/deathzone.gd
-deathzone_enemy.tscn::PackedScene::6886359295819361864::1747408056::0::1::::<><><>0<>0<><>::uid://goqr4jh04kdj::::res://Deathzone_enemy.gd
-demo_level.tscn::PackedScene::3349968170082576622::1747408056::0::1::::<><><>0<>0<><>::uid://dcg8tygx221kj::::res://themes/background.tres<>uid://cb3wju8hkg1vg::::res://scenes/player.tscn<>uid://n1ah4s2qpers::::res://assets/Charged Sprites/spikescharged.png<>uid://4bl7df5isy4c::::res://themes/demo_level.tres<>uid://dm4hvi6ufda10::::res://assets/Charged Sprites/chargepositiveblock.png<>uid://nuxnaplm734d::::res://scenes/chargedArea.tscn<>uid://pdpsv78yw6fy::::res://scenes/pause_menu_ui.tscn<>uid://dh5syx86yqtgu::::res://scenes/Deathzone.tscn<>uid://7oo44rorgnj::::res://scenes/platform.tscn<>uid://ctaqwt13pd2em::::res://scenes/Enemy.tscn
-Enemy.tscn::PackedScene::6107441195259942280::1747408056::0::1::::<><><>0<>0<><>::uid://bcdweew2fnney::::res://script/enemy.gd<>uid://dnr77ecvrrfl0::::res://assets/Enemy/Walk.png<>uid://c6da080dsnrd3::::res://assets/Enemy/Death.png<>uid://dh5syx86yqtgu::::res://scenes/Deathzone.tscn
-main_menu_ui.tscn::PackedScene::6133572422364315967::1747408056::0::1::::<><><>0<>0<><>::uid://dvrlrw5011u4k::::res://themes/main_menu_ui.tres<>uid://dht25afr85k8y::::res://script/main_menu_ui.gd
-pause_menu_ui.tscn::PackedScene::1059969840970886286::1747408056::0::1::::<><><>0<>0<><>::uid://cyicnrpjxoy3l::::res://assets/Fonts/m6x11plus.ttf<>res://script/pause_menu_ui.gd
-platform.tscn::PackedScene::66936695911580579::1747408056::0::1::::<><><>0<>0<><>::uid://4bl7df5isy4c::::res://themes/demo_level.tres<>uid://cq06qowyrelom::::res://script/platforms/lineal_platform.gd
-player.tscn::PackedScene::4902185735901141032::1747408056::0::1::::<><><>0<>0<><>::uid://c3p100dopelpd::::res://script/player.gd<>uid://cpnaaqhs1dhue::::res://assets/Reploid_Pack/Animations/MainCharacter/Character_SpriteSheet_RP1_free (40x40).png<>uid://0h7wi82ocud4::::res://assets/Reploid_Pack/Animations/MainCharacter/Character_SpriteSheet_RP1_free (40x40)-inverse.png<>uid://cyicnrpjxoy3l::::res://assets/Fonts/m6x11plus.ttf
-::res://script/::1747408056
-chargedbody.gd::GDScript::4851567419822785692::1747408056::0::1::::<>Area2D<><>0<>0<><>::
-credits_menu_ui.gd::GDScript::7045148225521514670::1747408056::0::1::::<>Control<><>0<>0<><>::
-deathzone.gd::GDScript::3575328668337432699::1747408056::0::1::::Deathzone<>Area2D<><>0<>0<><>::
-enemy.gd::GDScript::2534334666560888940::1747408056::0::1::::<>CharacterBody2D<><>0<>0<><>::
-main_menu_ui.gd::GDScript::7691500075036222210::1747408056::0::1::::<>Control<><>0<>0<><>::
-movile_platform.gd::GDScript::1866811781381292852::1747408056::0::1::::<>AnimatableBody2D<><>0<>0<><>::
-pause_menu_ui.gd::GDScript::2839279231207822802::1747408056::0::1::::<>Control<><>0<>0<><>::
-player.gd::GDScript::6770719260596034237::1747408056::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+git_convention.md::TextFile/TextFile::-1::1747408056::0::1::::<><><>0<>0<><>::
+::res://scenes/::1747642521
+chargedArea.tscn::PackedScene/PackedScene::955162252219191853::1747408056::0::1::::<><><>0<>0<><>::uid://cbeeuvhc3wj5m::::res://script/chargedbody.gd
+credits_menu_ui.tscn::PackedScene/PackedScene::7550674500415965639::1747408056::0::1::::<><><>0<>0<><>::uid://dvrlrw5011u4k::::res://themes/main_menu_ui.tres<>uid://c7mytdvqp03yw::::res://script/credits_menu_ui.gd
+Deathzone.tscn::PackedScene/PackedScene::7713652314547657292::1747408056::0::1::::<><><>0<>0<><>::uid://bq66e11hn4br4::::res://script/deathzone.gd
+deathzone_enemy.tscn::PackedScene/PackedScene::6886359295819361864::1747408056::0::1::::<><><>0<>0<><>::uid://goqr4jh04kdj::::res://Deathzone_enemy.gd
+demo_level.tscn::PackedScene::3349968170082576622::1747642521::0::1::::<><><>0<>0<><>::uid://dcg8tygx221kj::::res://themes/background.tres<>uid://cb3wju8hkg1vg::::res://scenes/player.tscn<>uid://n1ah4s2qpers::::res://assets/Charged Sprites/spikescharged.png<>uid://4bl7df5isy4c::::res://themes/demo_level.tres<>uid://dm4hvi6ufda10::::res://assets/Charged Sprites/chargepositiveblock.png<>uid://nuxnaplm734d::::res://scenes/chargedArea.tscn<>uid://pdpsv78yw6fy::::res://scenes/pause_menu_ui.tscn<>uid://dh5syx86yqtgu::::res://scenes/Deathzone.tscn<>uid://7oo44rorgnj::::res://scenes/platform.tscn<>uid://ctaqwt13pd2em::::res://scenes/Enemy.tscn
+Enemy.tscn::PackedScene/PackedScene::6107441195259942280::1747408056::0::1::::<><><>0<>0<><>::uid://bcdweew2fnney::::res://script/enemy.gd<>uid://dnr77ecvrrfl0::::res://assets/Enemy/Walk.png<>uid://c6da080dsnrd3::::res://assets/Enemy/Death.png<>uid://dh5syx86yqtgu::::res://scenes/Deathzone.tscn
+main_menu_ui.tscn::PackedScene/PackedScene::6133572422364315967::1747408056::0::1::::<><><>0<>0<><>::uid://dvrlrw5011u4k::::res://themes/main_menu_ui.tres<>uid://dht25afr85k8y::::res://script/main_menu_ui.gd
+pause_menu_ui.tscn::PackedScene/PackedScene::1059969840970886286::1747408056::0::1::::<><><>0<>0<><>::uid://cyicnrpjxoy3l::::res://assets/Fonts/m6x11plus.ttf<>res://script/pause_menu_ui.gd
+platform.tscn::PackedScene::66936695911580579::1747408745::0::1::::<><><>0<>0<><>::uid://4bl7df5isy4c::::res://themes/demo_level.tres<>uid://cq06qowyrelom::::res://script/platforms/lineal_platform.gd
+player.tscn::PackedScene::4902185735901141032::1747642521::0::1::::<><><>0<>0<><>::uid://c3p100dopelpd::::res://script/player.gd<>uid://cpnaaqhs1dhue::::res://assets/Reploid_Pack/Animations/MainCharacter/Character_SpriteSheet_RP1_free (40x40).png<>uid://0h7wi82ocud4::::res://assets/Reploid_Pack/Animations/MainCharacter/Character_SpriteSheet_RP1_free (40x40)-inverse.png<>uid://cyicnrpjxoy3l::::res://assets/Fonts/m6x11plus.ttf
+::res://script/::1747642521
+chargedbody.gd::GDScript/GDScript::4851567419822785692::1747408056::0::1::::<>Area2D<><>0<>0<><>::
+credits_menu_ui.gd::GDScript/GDScript::7045148225521514670::1747408056::0::1::::<>Control<><>0<>0<><>::
+deathzone.gd::GDScript/GDScript::3575328668337432699::1747408056::0::1::::Deathzone<>Area2D<><>0<>0<><>::
+enemy.gd::GDScript/GDScript::2534334666560888940::1747408056::0::1::::<>CharacterBody2D<><>0<>0<><>::
+main_menu_ui.gd::GDScript/GDScript::7691500075036222210::1747408056::0::1::::<>Control<><>0<>0<><>::
+movile_platform.gd::GDScript/GDScript::1866811781381292852::1747408056::0::1::::<>AnimatableBody2D<><>0<>0<><>::
+pause_menu_ui.gd::GDScript/GDScript::2839279231207822802::1747408056::0::1::::<>Control<><>0<>0<><>::
+player.gd::GDScript::6770719260596034237::1747642521::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
 ::res://script/platforms/::1747408056
-lineal_platform.gd::GDScript::5949383879350390852::1747408056::0::1::::<>AnimatableBody2D<><>0<>0<><>::
-::res://themes/::1747408056
-background.tres::TileSet::7314064866636630317::1747408056::0::1::::<><><>0<>0<><>::uid://ec4pj6cyxbcy::::res://assets/Reploid_Pack/TileSets/BackGround1_RP1 (16x16).png<>uid://bqhwsy4vuiob5::::res://assets/Reploid_Pack/TileSets/BackGround2_RP1 (16x16).png
-demo_level.tres::TileSet::2038266042250948812::1747408056::0::1::::<><><>0<>0<><>::uid://btique2dtnlwj::::res://assets/Reploid_Pack/TileSets/Midground_RP1 (16x16).png
-main_menu_ui.tres::Theme::8669021637743325764::1747408056::0::1::::<><><>0<>0<><>::uid://cyicnrpjxoy3l::::res://assets/Fonts/m6x11plus.ttf
+lineal_platform.gd::GDScript/GDScript::5949383879350390852::1747408056::0::1::::<>AnimatableBody2D<><>0<>0<><>::
+::res://themes/::1747642521
+background.tres::TileSet::7314064866636630317::1747642521::0::1::::<><><>0<>0<><>::uid://ec4pj6cyxbcy::::res://assets/Reploid_Pack/TileSets/BackGround1_RP1 (16x16).png<>uid://bqhwsy4vuiob5::::res://assets/Reploid_Pack/TileSets/BackGround2_RP1 (16x16).png
+demo_level.tres::TileSet::2038266042250948812::1747642521::0::1::::<><><>0<>0<><>::uid://btique2dtnlwj::::res://assets/Reploid_Pack/TileSets/Midground_RP1 (16x16).png
+main_menu_ui.tres::Theme/Theme::8669021637743325764::1747408056::0::1::::<><><>0<>0<><>::uid://cyicnrpjxoy3l::::res://assets/Fonts/m6x11plus.ttf

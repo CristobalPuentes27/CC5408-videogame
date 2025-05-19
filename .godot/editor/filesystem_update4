@@ -1,6 +1,5 @@
-res://scenes/demo_level.tscn
+res://scenes/player.tscn
 res://themes/background.tres
 res://themes/demo_level.tres
-res://scenes/platform.tscn
-res://scenes/player.tscn
 res://script/player.gd
+res://scenes/demo_level.tscn

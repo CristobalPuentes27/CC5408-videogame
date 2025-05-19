@@ -1,47 +1,74 @@
 class_name Player
 extends CharacterBody2D
-
-@onready var raycast_up: RayCast2D = $RayCast2D
-@onready var raycast_down: RayCast2D = $RayCast2D2
+@onready var raycast_force: RayCast2D = $RayCastForce
+@onready var raycast_down: RayCast2D = $RayCastDown
+@onready var raycast_gravity: RayCast2D = $RayCastGravity
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var charge_label: Label = $"CanvasLayer/Charge Label"
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-var jump_dir = 1
+const SPEED: float = 300.0
+const JUMP_VELOCITY: float = 400.0
+@export var health = 100
 @export var charge: int = 1
 var electric_force = Vector2(0, 1000)
-@export var health = 100
-var is_dead = false
+var is_dead: bool = false
+var enable_rotation: bool = false
+var invert_move: int = 1
+var move_direction: Vector2
+var jump_direction: Vector2
+var new_velocity: Vector2 = Vector2(0, 0)
 
 signal charge_changed(new_charge: int, player: Player)
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
-
+	raycast_force.enabled = false
 
 func _physics_process(delta: float) -> void:
+	
+	# Global position
+	move_direction = global_transform.x
+	jump_direction = -global_transform.y
+	
 	# Gravity.
-	velocity += (electric_force) * delta
-
+	if !raycast_gravity.is_colliding():
+		new_velocity += (electric_force) * delta
+	else:
+		new_velocity = Vector2(0, 0)
+	
+	# Rotate Player to the opposit of the force 
+	if enable_rotation:
+		var force: Vector2 = electric_force.normalized().rotated(-PI/2)
+		var angle: float = force.angle()
+		global_rotation = rotate_toward(global_rotation, angle, 0.4)
+		if global_rotation == angle:
+			enable_rotation = false
+			if angle > 3*PI/4 and angle < 5*PI/4:
+				invert_move = -1
+			else:
+				invert_move = 1
+	
 	# Jump.
 	if Input.is_action_just_pressed("jump") and raycast_down.is_colliding():
-		velocity.y = JUMP_VELOCITY * jump_dir
-
+		new_velocity = JUMP_VELOCITY * jump_direction
+	
 	# Direction.
-	var direction := Input.get_axis("move_left", "move_right")
+	var direction := Input.get_axis("move_left", "move_right") * invert_move
+	
+	# Right/Left Movement
+	velocity = velocity.move_toward(new_velocity + move_direction * direction * SPEED, SPEED)
 	
 	# Sprite Direction.
 	if direction < 0:
 		animated_sprite.scale.x = -1
 	elif direction > 0:
 		animated_sprite.scale.x = 1
-
+	
 	# Animations.
-	var anim_suffix = "-inverse" if charge == -1 else ""
-	var anim_to_play = ""
-
+	var anim_suffix: String = "-inverse" if charge == -1 else ""
+	var anim_to_play: String = ""
+	
 	if raycast_down.is_colliding():
 		if direction:
 			anim_to_play = "run" + anim_suffix
@@ -49,24 +76,17 @@ func _physics_process(delta: float) -> void:
 			anim_to_play = "idle" + anim_suffix
 	else:
 		anim_to_play = "jump" + anim_suffix
-
+	
 	# Solo cambia si es diferente para evitar reiniciar innecesariamente la animación
 	if animated_sprite.animation != anim_to_play:
 		animated_sprite.play(anim_to_play)
-
-	# Right/Left Movement
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	if raycast_up.is_colliding():
-		self.scale.y *= -1
-		jump_dir *= -1
-		
+	
+	if raycast_force.is_colliding():
+		pass
+	
 	# Invert charge
 	if Input.is_action_just_pressed("invert"):
-		charge*=-1
+		charge *= -1
 		emit_signal("charge_changed", charge, self)
 		if charge == -1:
 			charge_label.text = "Charge (-)"
@@ -85,11 +105,11 @@ func _physics_process(delta: float) -> void:
 		set_physics_process(false)  # Detener el movimiento
 		collision_shape_2d.disabled = true  # Evita colisiones
 		animated_sprite.play("death")
-
+	
 	move_and_slide()
 
-func bounce():
-	velocity.y = JUMP_VELOCITY / 1.5
+func bounce() -> void:
+	velocity = JUMP_VELOCITY * jump_direction / 1.5
 
 # Death
 func take_damage():
@@ -101,9 +121,13 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 # Set Electromagnetic Force
 func setForce(vector:Vector2 , other_charge: int) -> void:
-	print("Entro")
-	electric_force = vector  * charge * other_charge
+	electric_force = vector * charge * other_charge
+	enable_rotation = true
 
 func resetForce() -> void:
-	print("Salio")
-	electric_force =  Vector2(0, 1000)
+	electric_force = Vector2(0, 1000)
+	enable_rotation = true
+
+func prepare_rotation(force: Vector2) -> void:
+	raycast_force.enabled = true
+	#raycast_force.rotate_toward(force.normalized().angle())
