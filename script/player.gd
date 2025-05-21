@@ -2,7 +2,6 @@ class_name Player
 extends CharacterBody2D
 @onready var raycast_force: RayCast2D = $RayCastForce
 @onready var raycast_down: RayCast2D = $RayCastDown
-@onready var raycast_gravity: RayCast2D = $RayCastGravity
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var charge_label: Label = $"CanvasLayer/Charge Label"
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -16,8 +15,8 @@ var electric_force = default_electric_force
 var is_dead: bool = false
 var enable_rotation: bool = false
 var invert_move: int = 1
-var move_direction: Vector2
-var jump_direction: Vector2
+var move_direction: Vector2 = global_transform.x
+var jump_direction: Vector2 = -global_transform.y
 var new_velocity: Vector2 = Vector2(0, 0)
 
 signal charge_changed(new_charge: int, player: Player)
@@ -28,12 +27,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	# Global position
-	move_direction = global_transform.x
-	jump_direction = -global_transform.y
-	
 	# Gravity.
-	if !raycast_gravity.is_colliding():
+	if !is_on_floor():
 		new_velocity += (electric_force) * delta
 	else:
 		new_velocity = Vector2(0, 0)
@@ -47,6 +42,9 @@ func _physics_process(delta: float) -> void:
 		var force: Vector2 = electric_force.normalized().rotated(-PI/2)
 		var angle: float = force.angle()
 		global_rotation = rotate_toward(global_rotation, angle, 0.4)
+		move_direction = global_transform.x
+		jump_direction = -global_transform.y
+		up_direction = jump_direction
 		if global_rotation == angle:
 			enable_rotation = false
 			if angle > 3*PI/4 and angle < 5*PI/4:
@@ -62,7 +60,10 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right") * invert_move
 	
 	# Right/Left Movement
-	velocity = velocity.move_toward(new_velocity + move_direction * direction * SPEED, SPEED)
+	if !enable_rotation:
+		velocity = new_velocity.move_toward(new_velocity + move_direction * direction * SPEED, SPEED)
+	else:
+		velocity = new_velocity
 	
 	# Sprite Direction.
 	if direction < 0:
