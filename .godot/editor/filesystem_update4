@@ -4,3 +4,13 @@ res://scenes/levels/tutorial.tscn
 res://scenes/demo_level.tscn
 res://scenes/chargedArea.tscn
 res://themes/chargeArea.tres
+res://script/button.gd
+res://script/control.gd
+res://scenes/levels/demo_level.tscn
+res://scenes/main_menu_ui.tscn
+res://scenes/interface/control.tscn
+res://scenes/button.tscn
+res://script/main_menu_ui.gd
+res://script/player.gd
+res://script/levelSelector.gd
+res://scenes/interface/pause.tscn

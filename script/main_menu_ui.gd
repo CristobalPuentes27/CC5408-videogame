@@ -14,7 +14,7 @@ func _ready() -> void:
 func _on_start_pressed() -> void:
 	pass
 	#SoundManager.play_select_sound()
-	get_tree().change_scene_to_file("res://scenes/demo_level.tscn")
+	get_tree().change_scene_to_file("res://scenes/interface/control.tscn")
 	
 func _on_credit_pressed() -> void:
 	pass

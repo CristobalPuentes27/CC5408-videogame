@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -600.0
 var jump_dir = 1
 @export var charge: int = 1
 var electric_force = Vector2(0, 1000)

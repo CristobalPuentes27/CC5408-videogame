@@ -1,8 +1,9 @@
-res://themes
-res://scenes/levels
-res://scenes/tileset
-res://scenes
 res://script
+res://scenes/interface
+res://scenes/levels
+res://scenes
+res://themes
+res://scenes/tileset
 res://assets/Cazuela_Logo
 res://assets/Reploid_Pack/Animations/MainCharacter
 res://assets/Fonts
