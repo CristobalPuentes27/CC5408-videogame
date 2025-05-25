@@ -3,3 +3,4 @@ res://themes/demo_level.tres
 res://scenes/levels/tutorial.tscn
 res://scenes/demo_level.tscn
 res://scenes/chargedArea.tscn
+res://themes/chargeArea.tres
