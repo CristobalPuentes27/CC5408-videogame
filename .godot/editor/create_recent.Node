@@ -1,11 +1,11 @@
 TileMapLayer
 CollisionShape2D
+Camera2D
 AnimatableBody2D
 Area2D
 CanvasLayer
 Label
 RayCast2D
-Camera2D
 StaticBody2D
 AnimatedSprite2D
 Button

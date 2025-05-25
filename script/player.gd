@@ -23,7 +23,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Gravity.
-	velocity += (electric_force) * delta
+	velocity.y += (electric_force.y) * delta
+	velocity.y += (electric_force.y) * delta
+	
 
 	# Jump.
 	if Input.is_action_just_pressed("jump") and raycast_down.is_colliding():
