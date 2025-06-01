@@ -42,7 +42,6 @@ horizontal_alignment = 1
 [node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 script = ExtResource("3_bjmf6")
-dir_path = "res://scenes/levels"
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
