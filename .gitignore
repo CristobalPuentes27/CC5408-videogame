@@ -8,7 +8,7 @@ _crash.dmp
 .DS_Store
 Thumbs.db
 /export/
-/build/
+/builds/
 /bin/
 shader_cache/
 .godot/
