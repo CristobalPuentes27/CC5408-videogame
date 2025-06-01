@@ -1,4 +1,6 @@
-extends Control
+extends CanvasLayer
+
+@onready var victory_menu: CanvasLayer = $"../Victory_Menu"
 
 @onready var resume: Button = %Resume
 @onready var retry: Button = %Retry
@@ -7,6 +9,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	visible = false
 	resume.pressed.connect(_on_resume_pressed)
 	retry.pressed.connect(_on_retry_pressed)
@@ -14,7 +17,7 @@ func _ready() -> void:
 	quit.pressed.connect(_on_quit_pressed)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("pause") and not victory_menu.visible:
 		get_tree().paused = not get_tree().paused
 		visible = get_tree().paused
 
@@ -28,7 +31,7 @@ func _on_retry_pressed() -> void:
 
 func _on_title_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/main_menu_ui.tscn")
+	get_tree().change_scene_to_file("res://scenes/interface/main_menu_ui.tscn")
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

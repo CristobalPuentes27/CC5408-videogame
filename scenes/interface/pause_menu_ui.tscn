@@ -1,27 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://pdpsv78yw6fy"]
+[gd_scene load_steps=3 format=3 uid="uid://gx5fh02xwgi6"]
 
-[ext_resource type="FontFile" uid="uid://cyicnrpjxoy3l" path="res://assets/Fonts/m6x11plus.ttf" id="1_fh1cj"]
-[ext_resource type="Script" path="res://script/pause_menu_ui.gd" id="2_tvuuu"]
+[ext_resource type="Theme" uid="uid://sk36l0440j85" path="res://themes/pause_theme.tres" id="1_nktcj"]
+[ext_resource type="Script" uid="uid://bgpmrqk0gmypu" path="res://script/pause_menu_ui.gd" id="2_4mlp5"]
 
-[sub_resource type="Theme" id="Theme_tvuuu"]
-default_font = ExtResource("1_fh1cj")
-default_font_size = 50
-Button/font_sizes/font_size = 40
-Label/font_sizes/font_size = 65
-
-[node name="Pause Menu UI" type="Control"]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_tvuuu")
-script = ExtResource("2_tvuuu")
+[node name="Pause_Menu" type="CanvasLayer"]
+script = ExtResource("2_4mlp5")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -33,6 +18,7 @@ offset_right = 147.0
 offset_bottom = 189.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_nktcj")
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2

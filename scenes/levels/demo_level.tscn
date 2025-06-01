@@ -1,14 +1,16 @@
-[gd_scene load_steps=15 format=4 uid="uid://bny0qsgrk2u5k"]
+[gd_scene load_steps=18 format=4 uid="uid://bny0qsgrk2u5k"]
 
 [ext_resource type="TileSet" uid="uid://dcg8tygx221kj" path="res://themes/background.tres" id="1_4g07q"]
 [ext_resource type="PackedScene" uid="uid://dq56478o4vjmm" path="res://scenes/tileset/mid_ground.tscn" id="2_q0ote"]
 [ext_resource type="TileSet" uid="uid://ch6vg4hn8pasc" path="res://themes/chargeArea.tres" id="3_41bnu"]
 [ext_resource type="PackedScene" uid="uid://cb3wju8hkg1vg" path="res://scenes/player.tscn" id="4_3teai"]
 [ext_resource type="PackedScene" uid="uid://nuxnaplm734d" path="res://scenes/chargedArea.tscn" id="5_y2i6d"]
-[ext_resource type="PackedScene" uid="uid://gx5fh02xwgi6" path="res://scenes/interface/pause.tscn" id="6_4g07q"]
+[ext_resource type="PackedScene" uid="uid://gx5fh02xwgi6" path="res://scenes/interface/pause_menu_ui.tscn" id="6_4g07q"]
 [ext_resource type="PackedScene" uid="uid://dh5syx86yqtgu" path="res://scenes/Deathzone.tscn" id="7_opuwy"]
 [ext_resource type="PackedScene" uid="uid://7oo44rorgnj" path="res://scenes/platform.tscn" id="8_we7ct"]
 [ext_resource type="PackedScene" uid="uid://ctaqwt13pd2em" path="res://scenes/Enemy.tscn" id="9_us83r"]
+[ext_resource type="PackedScene" uid="uid://ojouiss0f5xv" path="res://scenes/interface/victory_menu_ui.tscn" id="10_q0ote"]
+[ext_resource type="PackedScene" uid="uid://uywjxjkrkhp3" path="res://scenes/victory_zone.tscn" id="11_41bnu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxo6y"]
 size = Vector2(550, 158)
@@ -24,6 +26,9 @@ distance = -125.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4g07q"]
 size = Vector2(122, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41bnu"]
+size = Vector2(224, 140)
 
 [node name="Demo Level" type="Node2D"]
 
@@ -48,7 +53,6 @@ zoom = Vector2(2, 2)
 limit_bottom = 259
 
 [node name="Area2D" parent="." instance=ExtResource("5_y2i6d")]
-visible = false
 position = Vector2(332, 52)
 vector = Vector2(0, 5000)
 
@@ -63,8 +67,6 @@ vector = Vector2(0, 5000)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(859.5, 105.5)
 shape = SubResource("RectangleShape2D_2vmhc")
-
-[node name="CanvasLayer" parent="." instance=ExtResource("6_4g07q")]
 
 [node name="Deathzone" parent="." instance=ExtResource("7_opuwy")]
 
@@ -93,3 +95,15 @@ vector = Vector2(5000, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
 position = Vector2(51, 0)
 shape = SubResource("RectangleShape2D_4g07q")
+
+[node name="Pause_Menu" parent="." instance=ExtResource("6_4g07q")]
+
+[node name="Victory_Menu" parent="." instance=ExtResource("10_q0ote")]
+
+[node name="VictoryZone" parent="." instance=ExtResource("11_41bnu")]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VictoryZone"]
+position = Vector2(1471, 70)
+shape = SubResource("RectangleShape2D_41bnu")
+debug_color = Color(0, 0.626576, 0.509884, 0.42)

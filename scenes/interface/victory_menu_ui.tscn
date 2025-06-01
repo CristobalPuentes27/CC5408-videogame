@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://ojouiss0f5xv"]
+
+[ext_resource type="FontFile" uid="uid://cyicnrpjxoy3l" path="res://assets/Fonts/m6x11plus.ttf" id="1_1mcpa"]
+[ext_resource type="Script" uid="uid://boxlm0o80bu3o" path="res://script/victory_menu_ui.gd" id="1_ija3x"]
+
+[sub_resource type="Theme" id="Theme_fcw7g"]
+default_font = ExtResource("1_1mcpa")
+default_font_size = 50
+Button/font_sizes/font_size = 40
+Label/font_sizes/font_size = 60
+
+[node name="Victory_Menu" type="CanvasLayer"]
+script = ExtResource("1_ija3x")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -82.0
+offset_right = 136.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fcw7g")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "You Win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next Level" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+text = "Next Level"
+
+[node name="Title" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+text = "Title"
+
+[node name="Quit" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+text = "Quit"

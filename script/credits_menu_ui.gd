@@ -12,5 +12,4 @@ func _process(delta: float) -> void:
 
 func _on_back_pressed() -> void:
 	#SoundManager.play_select_sound()
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/main_menu_ui.tscn")
+	get_tree().change_scene_to_file("res://scenes/interface/main_menu_ui.tscn")

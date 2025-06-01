@@ -12,14 +12,12 @@ func _ready() -> void:
 	quit.pressed.connect(_on_quit_pressed)
 
 func _on_start_pressed() -> void:
-	pass
 	#SoundManager.play_select_sound()
 	get_tree().change_scene_to_file("res://scenes/interface/control.tscn")
 	
 func _on_credit_pressed() -> void:
-	pass
 	#SoundManager.play_select_sound()
-	get_tree().change_scene_to_file("res://scenes/credits_menu_ui.tscn")
+	get_tree().change_scene_to_file("res://scenes/interface/credits_menu_ui.tscn")
 	
 func _on_quit_pressed() -> void:
 	get_tree().quit()

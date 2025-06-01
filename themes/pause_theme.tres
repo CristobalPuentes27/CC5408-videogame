@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://sk36l0440j85"]
+
+[ext_resource type="FontFile" uid="uid://cyicnrpjxoy3l" path="res://assets/Fonts/m6x11plus.ttf" id="1_kww5t"]
+
+[resource]
+default_font = ExtResource("1_kww5t")
+default_font_size = 50
+Button/font_sizes/font_size = 40
