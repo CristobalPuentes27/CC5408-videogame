@@ -15,5 +15,4 @@ func _process(delta: float) -> void:
 	scroll_container.scroll_vertical += 100 * delta
 
 func _on_back_pressed() -> void:
-	#SoundManager.play_select_sound()
 	get_tree().change_scene_to_file("res://scenes/interface/main_menu_ui.tscn")

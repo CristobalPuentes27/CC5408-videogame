@@ -25,7 +25,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if health <= 0 and not is_dead:
 		is_dead = true
-		#SoundManager.play_enemy_death_sound()
+		SoundManager.play_enemy_death_sound()
 		set_physics_process(false)
 		collision_shape_2d.disabled = true
 		death_zone_collision.disabled = true

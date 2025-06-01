@@ -19,6 +19,10 @@ boot_splash/image="uid://cqmxufp2cpyd8"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=1800
 
+[autoload]
+
+SoundManager="*res://script/sound_manager.gd"
+
 [input]
 
 invert={

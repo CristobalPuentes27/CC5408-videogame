@@ -16,12 +16,15 @@ func _ready() -> void:
 	title.pressed.connect(_on_title_pressed)
 	quit.pressed.connect(_on_quit_pressed)
 	
-		# Mover el selector entre botones con el teclado
-	resume.focus_mode = Control.FOCUS_ALL
-	retry.focus_mode = Control.FOCUS_ALL
-	title.focus_mode = Control.FOCUS_ALL
-	quit.focus_mode = Control.FOCUS_ALL
-	
+	# Mover el selector entre botones con el teclado
+	for button in [resume, retry, title, quit]:
+		button.focus_mode = Control.FOCUS_ALL
+		button.focus_entered.connect(_on_focus_entered)
+	resume.grab_focus()
+
+func _on_focus_entered() -> void:
+	SoundManager.play_select_sound()
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause") and not victory_menu.visible:
 		get_tree().paused = not get_tree().paused

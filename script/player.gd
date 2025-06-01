@@ -54,6 +54,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Jump.
 	if Input.is_action_just_pressed("jump") and raycast_down.is_colliding():
+		SoundManager.play_jump_sound()
 		new_velocity = JUMP_VELOCITY * jump_direction
 	
 	# Direction.
@@ -104,7 +105,7 @@ func _physics_process(delta: float) -> void:
 	# Death
 	if health <= 0 and not is_dead:
 		is_dead = true
-		#SoundManager.play_player_death_sound()
+		SoundManager.play_player_death_sound()
 		set_physics_process(false)  # Detener el movimiento
 		collision_shape_2d.disabled = true  # Evita colisiones
 		animated_sprite.play("death")
