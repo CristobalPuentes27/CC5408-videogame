@@ -15,7 +15,6 @@ func _ready() -> void:
 	next_level.focus_mode = Control.FOCUS_ALL
 	title.focus_mode = Control.FOCUS_ALL
 	quit.focus_mode = Control.FOCUS_ALL
-	next_level.grab_focus()
 
 func _on_next_level_pressed() -> void:
 	pass

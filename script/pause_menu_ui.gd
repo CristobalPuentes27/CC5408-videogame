@@ -21,13 +21,13 @@ func _ready() -> void:
 	retry.focus_mode = Control.FOCUS_ALL
 	title.focus_mode = Control.FOCUS_ALL
 	quit.focus_mode = Control.FOCUS_ALL
-	resume.grab_focus()
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause") and not victory_menu.visible:
 		get_tree().paused = not get_tree().paused
 		visible = get_tree().paused
-
+		if visible:
+			resume.grab_focus()
 func _on_resume_pressed() -> void:
 	get_tree().paused = false
 	visible = false
