@@ -8,6 +8,7 @@ extends CharacterBody2D
 
 const SPEED: float = 300.0
 const JUMP_VELOCITY: float = 400.0
+const MAX_VELOCITY: float = 550.0
 @export var health = 100
 @export var charge: int = 1
 const default_electric_force = Vector2(0, 1000)
@@ -23,19 +24,14 @@ signal charge_changed(new_charge: int, player: Player)
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
-	#raycast_force.enabled = false
 
 func _physics_process(delta: float) -> void:
-	
 	# Gravity.
 	if !is_on_floor():
 		new_velocity += (electric_force) * delta
+		new_velocity = new_velocity.limit_length(MAX_VELOCITY)  # Limitar velocidad máxima
 	else:
 		new_velocity = Vector2(0, 0)
-	
-	#if raycast_force.is_colliding():
-		#enable_rotation = true
-		#raycast_force.enabled = false
 	
 	# Rotate Player to the opposit of the force 
 	if enable_rotation:
@@ -126,15 +122,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 # Set Electromagnetic Force
 func setForce(force:Vector2 , other_charge: int) -> void:
 	electric_force = force * charge * other_charge
-	#prepare_rotation(electric_force)
 	enable_rotation = true
 
 func resetForce() -> void:
 	electric_force = default_electric_force
-	#prepare_rotation(default_electric_force)
 	enable_rotation = true
-
-#func prepare_rotation(force: Vector2) -> void:
-	#raycast_force.global_rotation = electric_force.normalized().angle()
-	#print(electric_force.normalized().angle())
-	#raycast_force.enabled = true
