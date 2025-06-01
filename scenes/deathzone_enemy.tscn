@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5d2ljg8kqsuy"]
+[gd_scene load_steps=2 format=3 uid="uid://ocgbbfmphvda"]
 
-[ext_resource type="Script" uid="uid://goqr4jh04kdj" path="res://Deathzone_enemy.gd" id="1_jpi32"]
+[sub_resource type="GDScript" id="GDScript_nbnyg"]
+script/source = "extends Deathzone
+"
 
 [node name="Area2D" type="Area2D"]
-script = ExtResource("1_jpi32")
+script = SubResource("GDScript_nbnyg")

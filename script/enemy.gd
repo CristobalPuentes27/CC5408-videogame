@@ -58,7 +58,6 @@ func turn_around():
 	ray_cast_left.scale.x *= -1
 	ray_cast_down.scale.x *= -1
 	
-
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	if body is Player:
 		var player: Player = body
