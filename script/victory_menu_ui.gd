@@ -7,8 +7,18 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	next_level.pressed.connect(_on_next_level_pressed)
 	title.pressed.connect(_on_title_pressed)
 	quit.pressed.connect(_on_quit_pressed)
+	
+	# Mover el selector entre botones con el teclado
+	next_level.focus_mode = Control.FOCUS_ALL
+	title.focus_mode = Control.FOCUS_ALL
+	quit.focus_mode = Control.FOCUS_ALL
+	next_level.grab_focus()
+
+func _on_next_level_pressed() -> void:
+	pass
 
 func _on_title_pressed() -> void:
 	get_tree().paused = false

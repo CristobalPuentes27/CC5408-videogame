@@ -5,4 +5,7 @@
 [resource]
 default_font = ExtResource("1_kww5t")
 default_font_size = 50
-Button/font_sizes/font_size = 40
+Button/font_sizes/font_size = 45
+GridContainer/constants/h_separation = 20
+GridContainer/constants/v_separation = 20
+Label/font_sizes/font_size = 70

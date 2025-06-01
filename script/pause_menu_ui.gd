@@ -15,7 +15,14 @@ func _ready() -> void:
 	retry.pressed.connect(_on_retry_pressed)
 	title.pressed.connect(_on_title_pressed)
 	quit.pressed.connect(_on_quit_pressed)
-
+	
+		# Mover el selector entre botones con el teclado
+	resume.focus_mode = Control.FOCUS_ALL
+	retry.focus_mode = Control.FOCUS_ALL
+	title.focus_mode = Control.FOCUS_ALL
+	quit.focus_mode = Control.FOCUS_ALL
+	resume.grab_focus()
+	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause") and not victory_menu.visible:
 		get_tree().paused = not get_tree().paused

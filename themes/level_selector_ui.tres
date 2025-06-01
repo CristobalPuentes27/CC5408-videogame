@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cvsqhbx4ihvwn"]
+
+[ext_resource type="FontFile" uid="uid://cyicnrpjxoy3l" path="res://assets/Fonts/m6x11plus.ttf" id="1_ulx1o"]
+
+[resource]
+default_font = ExtResource("1_ulx1o")
+default_font_size = 55
+Label/font_sizes/font_size = 90
+RichTextLabel/font_sizes/bold_font_size = 30
+RichTextLabel/font_sizes/normal_font_size = 25

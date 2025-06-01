@@ -1,6 +1,6 @@
 extends Control
 
-const LEVEL_BTN = preload("res://scenes/button.tscn")
+const LEVEL_BTN = preload("res://scenes/interface/button.tscn")
 
 @export_dir var dir_path
 @onready var grid: GridContainer = $"../GridContainer"
@@ -25,7 +25,10 @@ func get_levels(path):
 func create_level_btn(lvl_path: String, lvl_name: String):
 	var btn = LEVEL_BTN.instantiate()
 	btn.text = lvl_name.trim_suffix(".tscn").replace("_", " ")
+	btn.focus_mode = Control.FOCUS_ALL
 	grid.add_child(btn)
-	btn.pressed.connect(func():
-		get_tree().change_scene_to_file(lvl_path)
-	)
+	btn.pressed.connect(func(): get_tree().change_scene_to_file(lvl_path))
+
+	# Darle el foco inicial al primer botón
+	if grid.get_child_count() == 1:
+		btn.grab_focus()

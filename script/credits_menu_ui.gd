@@ -6,6 +6,10 @@ extends Control
 
 func _ready() -> void:
 	back.pressed.connect(_on_back_pressed)
+	
+	# Mover el selector entre botones con el teclado
+	back.focus_mode = Control.FOCUS_ALL
+	back.grab_focus()
 
 func _process(delta: float) -> void:
 	scroll_container.scroll_vertical += 100 * delta
