@@ -20,6 +20,12 @@ var move_direction: Vector2 = global_transform.x
 var jump_direction: Vector2 = -global_transform.y
 var new_velocity: Vector2 = Vector2(0, 0)
 var coyote_time: float = 0
+const dash_velocity: float = 1200
+const MAX_DASH_TIME: float = 0.15
+var dash_time: float = MAX_DASH_TIME
+var is_dashing: bool = false
+var can_dash: bool = false
+var dash_direction: int
 
 signal charge_changed(new_charge: int, player: Player)
 
@@ -34,6 +40,7 @@ func _physics_process(delta: float) -> void:
 		new_velocity += (electric_force) * delta
 		new_velocity = new_velocity.limit_length(MAX_VELOCITY)  # Limitar velocidad máxima
 	else:
+		can_dash = true
 		coyote_time = .12
 		new_velocity = Vector2(0, 0)
 	
@@ -66,6 +73,17 @@ func _physics_process(delta: float) -> void:
 		velocity = new_velocity.move_toward(new_velocity + move_direction * direction * SPEED, SPEED)
 	else:
 		velocity = new_velocity
+	
+	if (Input.is_action_just_pressed("dash") and can_dash and direction) or is_dashing:
+		if !is_dashing:
+			dash_direction = direction
+		is_dashing = true
+		can_dash = false
+		velocity = move_direction * dash_direction * dash_velocity
+		dash_time -= delta
+		if dash_time < 0:
+			dash_time = MAX_DASH_TIME
+			is_dashing = false
 	
 	# Sprite Direction.
 	if direction < 0:
