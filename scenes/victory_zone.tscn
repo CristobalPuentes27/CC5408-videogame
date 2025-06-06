@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://uywjxjkrkhp3"]
+[gd_scene load_steps=3 format=3 uid="uid://uywjxjkrkhp3"]
 
 [ext_resource type="Script" uid="uid://dchpamu26w7wf" path="res://script/victory_zone.gd" id="1_4da8e"]
+[ext_resource type="PackedScene" uid="uid://bw5sla8nskjlg" path="res://scenes/winTablet.tscn" id="2_qkseb"]
 
 [node name="VictoryZone" type="Area2D"]
 script = ExtResource("1_4da8e")
+
+[node name="Node2D" parent="." instance=ExtResource("2_qkseb")]
