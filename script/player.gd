@@ -19,18 +19,22 @@ var invert_move: int = 1
 var move_direction: Vector2 = global_transform.x
 var jump_direction: Vector2 = -global_transform.y
 var new_velocity: Vector2 = Vector2(0, 0)
+var coyote_time: float = 0
 
 signal charge_changed(new_charge: int, player: Player)
 
 func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
+	#Engine.time_scale = 0.3
 
 func _physics_process(delta: float) -> void:
 	# Gravity.
 	if !is_on_floor():
+		coyote_time = max(coyote_time-delta, 0)
 		new_velocity += (electric_force) * delta
 		new_velocity = new_velocity.limit_length(MAX_VELOCITY)  # Limitar velocidad máxima
 	else:
+		coyote_time = .12
 		new_velocity = Vector2(0, 0)
 	
 	# Rotate Player to the opposit of the force 
@@ -49,9 +53,10 @@ func _physics_process(delta: float) -> void:
 				invert_move = 1
 	
 	# Jump.
-	if Input.is_action_just_pressed("jump") and raycast_down.is_colliding():
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_time):
 		SoundManager.play_jump_sound()
 		new_velocity = JUMP_VELOCITY * jump_direction
+		coyote_time = 0
 	
 	# Direction.
 	var direction := Input.get_axis("move_left", "move_right") * invert_move
@@ -72,7 +77,7 @@ func _physics_process(delta: float) -> void:
 	var anim_suffix: String = "-inverse" if charge == -1 else ""
 	var anim_to_play: String = ""
 	
-	if raycast_down.is_colliding():
+	if is_on_floor():
 		if direction:
 			anim_to_play = "run" + anim_suffix
 		else:

@@ -113,3 +113,7 @@ collision_layer = 16
 position = Vector2(1471, 70)
 shape = SubResource("RectangleShape2D_41bnu")
 debug_color = Color(0, 0.626576, 0.509884, 0.42)
+
+[node name="Enemy2" parent="." instance=ExtResource("9_us83r")]
+position = Vector2(104, 64)
+scale = Vector2(0.5, 0.5)
