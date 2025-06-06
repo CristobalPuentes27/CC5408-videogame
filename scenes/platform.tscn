@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://7oo44rorgnj"]
 
-[ext_resource type="TileSet" uid="uid://4bl7df5isy4c" path="res://themes/midground.tres" id="2_507ja"]
+[ext_resource type="TileSet" uid="uid://4bl7df5isy4c" path="res://assets/Reploid_Pack/midground.tres" id="2_507ja"]
 [ext_resource type="Script" uid="uid://cq06qowyrelom" path="res://script/platforms/lineal_platform.gd" id="2_nlgqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ba0x2"]
