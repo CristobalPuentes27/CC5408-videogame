@@ -88,7 +88,9 @@ position = Vector2(1001, 187)
 shape = SubResource("WorldBoundaryShape2D_i46ye")
 
 [node name="Platform" parent="." instance=ExtResource("8_we7ct")]
-position = Vector2(368, -49)
+position = Vector2(332, -49)
+distancia = Vector2(150, 0)
+speed = 50.0
 
 [node name="Enemy" parent="." instance=ExtResource("9_us83r")]
 position = Vector2(552, 113)
@@ -96,7 +98,7 @@ scale = Vector2(0.524704, 0.532012)
 
 [node name="Area2D3" parent="." instance=ExtResource("5_y2i6d")]
 position = Vector2(-192, -88)
-vector = Vector2(5000, 0)
+vector = Vector2(4000, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
 position = Vector2(51, 0)
