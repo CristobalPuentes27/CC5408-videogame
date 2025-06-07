@@ -46,14 +46,14 @@ tile_set = ExtResource("5_l7jeu")
 
 [node name="Area2D" parent="." instance=ExtResource("6_opby3")]
 vector = Vector2(1000, 0)
-charge = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-37, 12)
 shape = SubResource("RectangleShape2D_au4s2")
 
 [node name="Area2D2" parent="." instance=ExtResource("6_opby3")]
-vector = Vector2(1000, 0)
+vector = Vector2(-999, 0)
+charge = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(109, -282)
