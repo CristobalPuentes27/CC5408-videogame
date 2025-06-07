@@ -94,10 +94,11 @@ position = Vector2(869, 123)
 shape = SubResource("RectangleShape2D_3e81p")
 
 [node name="VictoryZone" parent="." instance=ExtResource("6_3fqbf")]
-position = Vector2(1185, 41)
+position = Vector2(1182, 45)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VictoryZone"]
-position = Vector2(-3, 3)
+visible = false
+position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_jjgu2")
 debug_color = Color(0, 0.623873, 0.533922, 0.42)
 
@@ -109,7 +110,6 @@ visible = false
 [node name="Area2D5" parent="." instance=ExtResource("4_hsmfs")]
 position = Vector2(986, 161)
 vector = Vector2(0, 2000)
-charge = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
 position = Vector2(29, 4.5)

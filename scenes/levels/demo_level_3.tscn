@@ -148,7 +148,7 @@ position = Vector2(653.5, 78)
 shape = SubResource("RectangleShape2D_8ig16")
 
 [node name="VictoryZone" parent="." instance=ExtResource("9_ymyb0")]
-position = Vector2(1131, -119)
+position = Vector2(1142, -113)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VictoryZone"]
 visible = false

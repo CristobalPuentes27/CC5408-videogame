@@ -61,6 +61,7 @@ limit_bottom = 259
 [node name="Area2D" parent="." instance=ExtResource("5_y2i6d")]
 position = Vector2(332, 52)
 vector = Vector2(0, 5000)
+charge = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(234, -270)
@@ -113,6 +114,7 @@ position = Vector2(1505, 94)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VictoryZone"]
+visible = false
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_41bnu")
 debug_color = Color(0, 0.626576, 0.509884, 0.42)
