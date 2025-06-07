@@ -79,7 +79,7 @@ vector = Vector2(0, 3000)
 charge = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plataform/Platform2/Area2D"]
-position = Vector2(0.25, 20)
+position = Vector2(1, 20)
 shape = SubResource("RectangleShape2D_bxepk")
 
 [node name="Deathzone" parent="plataform/Platform2" instance=ExtResource("8_bxepk")]

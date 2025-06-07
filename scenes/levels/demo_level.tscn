@@ -61,7 +61,6 @@ limit_bottom = 259
 [node name="Area2D" parent="." instance=ExtResource("5_y2i6d")]
 position = Vector2(332, 52)
 vector = Vector2(0, 5000)
-charge = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(234, -270)
@@ -70,6 +69,7 @@ shape = SubResource("RectangleShape2D_fxo6y")
 [node name="Area2D2" parent="." instance=ExtResource("5_y2i6d")]
 position = Vector2(332, 52)
 vector = Vector2(0, 5000)
+charge = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(859.5, 105.5)

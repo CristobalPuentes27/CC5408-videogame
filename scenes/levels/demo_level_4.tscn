@@ -12,10 +12,10 @@
 size = Vector2(105, 382.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj8p5"]
-size = Vector2(116, 429)
+size = Vector2(102, 429)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa2w2"]
-size = Vector2(114, 499)
+size = Vector2(99, 499)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmvsx"]
 size = Vector2(55, 57)
@@ -30,9 +30,6 @@ visible = false
 zoom = Vector2(2.5, 2.5)
 
 [node name="Node2D" type="Node2D" parent="."]
-
-[node name="Pause_Menu" parent="Node2D" instance=ExtResource("2_qvqpr")]
-visible = false
 
 [node name="Node2D2" type="Node2D" parent="."]
 
@@ -53,17 +50,16 @@ shape = SubResource("RectangleShape2D_au4s2")
 
 [node name="Area2D2" parent="." instance=ExtResource("6_opby3")]
 vector = Vector2(1500, 0)
-charge = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(109, -282)
+position = Vector2(116, -282)
 shape = SubResource("RectangleShape2D_gj8p5")
 
 [node name="Area2D3" parent="." instance=ExtResource("6_opby3")]
 vector = Vector2(2000, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(-26, -710.5)
+position = Vector2(-33.5, -710.5)
 shape = SubResource("RectangleShape2D_pa2w2")
 
 [node name="VictoryZone" parent="." instance=ExtResource("7_qvqpr")]
@@ -76,4 +72,7 @@ shape = SubResource("RectangleShape2D_qmvsx")
 debug_color = Color(0, 0.623873, 0.533922, 0.42)
 
 [node name="Victory_Menu" parent="." instance=ExtResource("3_pa2w2")]
+visible = false
+
+[node name="Pause_Menu" parent="." instance=ExtResource("2_qvqpr")]
 visible = false
