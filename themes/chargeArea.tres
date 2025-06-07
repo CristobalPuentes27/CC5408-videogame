@@ -1,8 +1,10 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://ch6vg4hn8pasc"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://ch6vg4hn8pasc"]
 
 [ext_resource type="Texture2D" uid="uid://vr5akvm3htk4" path="res://assets/Charged Sprites/chargenegativeblock.png" id="1_2he3s"]
 [ext_resource type="Texture2D" uid="uid://n1ah4s2qpers" path="res://assets/Charged Sprites/spikescharged.png" id="1_7n1hu"]
 [ext_resource type="Texture2D" uid="uid://dm4hvi6ufda10" path="res://assets/Charged Sprites/chargepositiveblock.png" id="2_2he3s"]
+[ext_resource type="Texture2D" uid="uid://t5p2lqt2686l" path="res://assets/Charged Sprites/chargeleftblock.png" id="2_ucdtw"]
+[ext_resource type="Texture2D" uid="uid://dwl3rvquwa2rl" path="res://assets/Charged Sprites/chargerightblock.png" id="4_oix7x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgi7w"]
 texture = ExtResource("1_2he3s")
@@ -14,6 +16,17 @@ texture = ExtResource("1_2he3s")
 3:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50y0s"]
+texture = ExtResource("2_ucdtw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0bg5e"]
 texture = ExtResource("1_7n1hu")
@@ -30,6 +43,17 @@ texture = ExtResource("1_7n1hu")
 2:2/0 = 0
 3:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x678j"]
+texture = ExtResource("4_oix7x")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fmty4"]
 texture = ExtResource("2_2he3s")
 0:0/0 = 0
@@ -45,3 +69,5 @@ texture = ExtResource("2_2he3s")
 sources/2 = SubResource("TileSetAtlasSource_0bg5e")
 sources/5 = SubResource("TileSetAtlasSource_fmty4")
 sources/0 = SubResource("TileSetAtlasSource_xgi7w")
+sources/1 = SubResource("TileSetAtlasSource_50y0s")
+sources/3 = SubResource("TileSetAtlasSource_x678j")
