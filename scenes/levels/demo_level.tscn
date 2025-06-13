@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=4 uid="uid://bny0qsgrk2u5k"]
 
 [ext_resource type="TileSet" uid="uid://dcg8tygx221kj" path="res://themes/background.tres" id="1_4g07q"]
-[ext_resource type="TileSet" uid="uid://4bl7df5isy4c" path="res://themes/midground.tres" id="2_41bnu"]
+[ext_resource type="TileSet" uid="uid://4bl7df5isy4c" path="res://assets/Reploid_Pack/midground.tres" id="2_41bnu"]
 [ext_resource type="TileSet" uid="uid://ch6vg4hn8pasc" path="res://themes/chargeArea.tres" id="3_41bnu"]
 [ext_resource type="PackedScene" uid="uid://cb3wju8hkg1vg" path="res://scenes/player.tscn" id="4_3teai"]
 [ext_resource type="PackedScene" uid="uid://nuxnaplm734d" path="res://scenes/chargedArea.tscn" id="5_y2i6d"]
@@ -28,7 +28,7 @@ distance = -125.0
 size = Vector2(122, 192)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41bnu"]
-size = Vector2(224, 140)
+size = Vector2(61, 65)
 
 [node name="Demo Level" type="Node2D"]
 
@@ -69,6 +69,7 @@ shape = SubResource("RectangleShape2D_fxo6y")
 [node name="Area2D2" parent="." instance=ExtResource("5_y2i6d")]
 position = Vector2(332, 52)
 vector = Vector2(0, 5000)
+charge = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(859.5, 105.5)
@@ -88,7 +89,9 @@ position = Vector2(1001, 187)
 shape = SubResource("WorldBoundaryShape2D_i46ye")
 
 [node name="Platform" parent="." instance=ExtResource("8_we7ct")]
-position = Vector2(368, -49)
+position = Vector2(332, -49)
+distancia = Vector2(150, 0)
+speed = 50.0
 
 [node name="Enemy" parent="." instance=ExtResource("9_us83r")]
 position = Vector2(552, 113)
@@ -96,7 +99,7 @@ scale = Vector2(0.524704, 0.532012)
 
 [node name="Area2D3" parent="." instance=ExtResource("5_y2i6d")]
 position = Vector2(-192, -88)
-vector = Vector2(5000, 0)
+vector = Vector2(4000, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
 position = Vector2(51, 0)
@@ -107,10 +110,12 @@ shape = SubResource("RectangleShape2D_4g07q")
 [node name="Victory_Menu" parent="." instance=ExtResource("10_q0ote")]
 
 [node name="VictoryZone" parent="." instance=ExtResource("11_41bnu")]
+position = Vector2(1505, 94)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VictoryZone"]
-position = Vector2(1471, 70)
+visible = false
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_41bnu")
 debug_color = Color(0, 0.626576, 0.509884, 0.42)
 

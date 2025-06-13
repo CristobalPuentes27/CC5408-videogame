@@ -6,6 +6,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	next_level.pressed.connect(_on_next_level_pressed)
 	title.pressed.connect(_on_title_pressed)
