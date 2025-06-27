@@ -18,8 +18,10 @@ var is_dead = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $Pivot/AnimatedSprite2D
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	if(carga==0):
 		animated_sprite_2d.play("walk")
 	if(carga==1):

@@ -132,7 +132,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func bounce() -> void:
-	new_velocity = JUMP_VELOCITY * jump_direction / 1.5
+	new_velocity = JUMP_VELOCITY * jump_direction 
 
 # Death
 func take_damage():
