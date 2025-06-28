@@ -11,6 +11,7 @@ const JUMP_VELOCITY: float = 400.0
 const MAX_VELOCITY: float = 550.0
 @export var health = 100
 @export var charge: int = 1
+@export var GlobalDash:bool=false
 const default_electric_force = Vector2(0, 1000)
 var electric_force = default_electric_force
 var is_dead: bool = false
@@ -74,7 +75,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = new_velocity
 	
-	if (Input.is_action_just_pressed("dash") and can_dash and direction) or is_dashing:
+	if (GlobalDash and (Input.is_action_just_pressed("dash") and can_dash and direction) or is_dashing):
 		if !is_dashing:
 			dash_direction = direction
 			is_dashing = true
