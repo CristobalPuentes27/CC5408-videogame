@@ -30,7 +30,7 @@ size = Vector2(55, 57)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fqbf"]
 size = Vector2(53, 36)
 
-[node name="tutorial" type="Node2D"]
+[node name="DemoLevel2" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-106, 143)

@@ -9,9 +9,6 @@ func _ready() -> void:
 	var filePath:String = get_parent().get_scene_file_path()
 	var index = get_level_index(filePath)
 	var nextLevel:String=filePath.replace(str(index),str(index+1))
-	print(filePath)
-	print(index)
-	print(nextLevel)
 	visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	next_level.pressed.connect(_on_next_level_pressed)

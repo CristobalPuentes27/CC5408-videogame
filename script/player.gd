@@ -39,6 +39,7 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		coyote_time = max(coyote_time-delta, 0)
 		new_velocity += (electric_force) * delta
+		print("new_velocity" + str(new_velocity))
 		new_velocity = new_velocity.limit_length(MAX_VELOCITY)  # Limitar velocidad máxima
 	else:
 		can_dash = true
@@ -149,7 +150,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 # Set Electromagnetic Force
 func setForce(force:Vector2 , other_charge: int) -> void:
+	print("force" + str(force))
+	print("charge" + str(charge))
+	print("other charge" + str(other_charge))
 	electric_force = force * charge * other_charge
+	print("ef" + str(electric_force))
 	enable_rotation = true
 
 func resetForce() -> void:
