@@ -21,15 +21,15 @@ func _ready() -> void:
 	quit.focus_mode = Control.FOCUS_ALL
 
 func _on_next_level_pressed() -> void:
+	get_tree().paused = false
 	var filePath:String = get_parent().get_scene_file_path()
 	var index = get_level_index(filePath)
 	var nextLevel:String=filePath.replace(str(index),str(index+1))
 	if (ResourceLoader.exists(nextLevel)):
-		print("test")
 		get_tree().change_scene_to_file(nextLevel)
 	else:
 		get_tree().change_scene_to_file("res://scenes/interface/main_menu_ui.tscn")
-		
+
 func _on_title_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/interface/main_menu_ui.tscn")

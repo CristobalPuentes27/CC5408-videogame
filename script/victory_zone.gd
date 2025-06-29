@@ -4,11 +4,11 @@ extends Area2D
 @onready var victory_menu: CanvasLayer = $"../Victory_Menu"
 
 func _ready() -> void:
-	#state.play("idle")
 	victory_menu.visible = false  # Ocultar al inicio
 	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body: Node2D) -> void:
+	get_tree().paused = true
 	if body is Player:
 		state.travel("win")
 		victory_menu.visible = true
