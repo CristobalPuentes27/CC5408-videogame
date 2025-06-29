@@ -11,7 +11,7 @@ const JUMP_VELOCITY: float = 400.0
 const MAX_VELOCITY: float = 550.0
 @export var health = 100
 @export var charge: int = 1
-@export var GlobalDash:bool=false
+@export var GlobalDash:bool=true     # Enable this to be able to Dash!!
 const default_electric_force = Vector2(0, 1000)
 var electric_force = default_electric_force
 var is_dead: bool = false
@@ -21,7 +21,7 @@ var move_direction: Vector2 = global_transform.x
 var jump_direction: Vector2 = -global_transform.y
 var new_velocity: Vector2 = Vector2(0, 0)
 var coyote_time: float = 0
-const dash_velocity: float = 1200
+const dash_velocity: float = 800
 const MAX_DASH_TIME: float = 0.15
 var dash_time: float = MAX_DASH_TIME
 var is_dashing: bool = false
@@ -74,7 +74,8 @@ func _physics_process(delta: float) -> void:
 		velocity = new_velocity.move_toward(new_velocity + move_direction * direction * SPEED, SPEED)
 	else:
 		velocity = new_velocity
-	
+
+	# Dash
 	if (GlobalDash and (Input.is_action_just_pressed("dash") and can_dash and direction) or is_dashing):
 		if !is_dashing:
 			dash_direction = direction
@@ -85,7 +86,7 @@ func _physics_process(delta: float) -> void:
 		if dash_time < 0:
 			dash_time = MAX_DASH_TIME
 			is_dashing = false
-	
+
 	# Sprite Direction.
 	if direction < 0:
 		animated_sprite.scale.x = -1

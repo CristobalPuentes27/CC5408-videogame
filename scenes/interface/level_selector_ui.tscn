@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b76s54tx2l45w"]
 
-[ext_resource type="Script" uid="uid://cu6htswkerr0k" path="res://script/levelSelector.gd" id="1_3dc4l"]
+[ext_resource type="Script" path="res://script/levelSelector.gd" id="1_3dc4l"]
 [ext_resource type="Theme" uid="uid://sk36l0440j85" path="res://themes/pause_theme.tres" id="1_elf34"]
 [ext_resource type="Script" uid="uid://duglsdjte5tpd" path="res://script/control.gd" id="3_bjmf6"]
 
