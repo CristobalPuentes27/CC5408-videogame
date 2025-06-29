@@ -68,7 +68,7 @@ shape = SubResource("RectangleShape2D_fxo6y")
 
 [node name="Area2D2" parent="." instance=ExtResource("5_74y6x")]
 position = Vector2(332, 52)
-vector = Vector2(0, 5000)
+vector = Vector2(0, -5000)
 charge = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]

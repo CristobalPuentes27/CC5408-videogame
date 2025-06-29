@@ -1,5 +1,5 @@
 extends Area2D
-@export var vector=Vector2(0,1100)
+@export var vector=Vector2(0,1000)
 @export var charge=1
 
 
