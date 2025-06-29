@@ -22,7 +22,7 @@ var jump_direction: Vector2 = -global_transform.y
 var new_velocity: Vector2 = Vector2(0, 0)
 var coyote_time: float = 0
 const dash_velocity: float = 800
-const MAX_DASH_TIME: float = 0.15
+const MAX_DASH_TIME: float = 0.2
 var dash_time: float = MAX_DASH_TIME
 var is_dashing: bool = false
 var can_dash: bool = false
@@ -75,6 +75,31 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = new_velocity
 
+	# Sprite Direction.
+	if direction < 0:
+		animated_sprite.scale.x = -1
+	elif direction > 0:
+		animated_sprite.scale.x = 1
+	
+	# Animations.
+	var anim_suffix: String = "-inverse" if charge == -1 else ""
+	var anim_to_play: String = ""
+	
+	if is_dashing:
+		anim_to_play = "dash" + anim_suffix
+
+	elif is_on_floor():
+		if direction:
+			anim_to_play = "run" + anim_suffix
+		else:
+			anim_to_play = "idle" + anim_suffix
+	else:
+		anim_to_play = "jump" + anim_suffix
+	
+	# Solo cambia si es diferente para evitar reiniciar innecesariamente la animación
+	if animated_sprite.animation != anim_to_play:
+		animated_sprite.play(anim_to_play)
+	
 	# Dash
 	if (GlobalDash and (Input.is_action_just_pressed("dash") and can_dash and direction) or is_dashing):
 		if !is_dashing:
@@ -86,28 +111,6 @@ func _physics_process(delta: float) -> void:
 		if dash_time < 0:
 			dash_time = MAX_DASH_TIME
 			is_dashing = false
-
-	# Sprite Direction.
-	if direction < 0:
-		animated_sprite.scale.x = -1
-	elif direction > 0:
-		animated_sprite.scale.x = 1
-	
-	# Animations.
-	var anim_suffix: String = "-inverse" if charge == -1 else ""
-	var anim_to_play: String = ""
-	
-	if is_on_floor():
-		if direction:
-			anim_to_play = "run" + anim_suffix
-		else:
-			anim_to_play = "idle" + anim_suffix
-	else:
-		anim_to_play = "jump" + anim_suffix
-	
-	# Solo cambia si es diferente para evitar reiniciar innecesariamente la animación
-	if animated_sprite.animation != anim_to_play:
-		animated_sprite.play(anim_to_play)
 	
 	# Invert charge
 	if Input.is_action_just_pressed("invert"):
