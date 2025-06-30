@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://tdi1prstipe1"]
+
+[ext_resource type="Material" uid="uid://bfqo0n626fb6p" path="res://themes/gpu_particles_2d.tres" id="1_a5wyd"]
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+amount = 100
+process_material = ExtResource("1_a5wyd")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drnrnclrcptjj"
-path="res://.godot/imported/TileSet_RP1_Free (16x16).png-53ad1f84ddaf8a577dc4fb73c1f6ab9d.ctex"
+uid="uid://diak6m83felck"
+path="res://.godot/imported/Foreground_RP1 (16x16).png-2bb044051653c391ac693f25521f653f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Reploid_Pack/TileSets/TileSet_RP1_Free (16x16).png"
-dest_files=["res://.godot/imported/TileSet_RP1_Free (16x16).png-53ad1f84ddaf8a577dc4fb73c1f6ab9d.ctex"]
+source_file="res://assets/Reploid_Pack/TileSets/Foreground_RP1 (16x16).png"
+dest_files=["res://.godot/imported/Foreground_RP1 (16x16).png-2bb044051653c391ac693f25521f653f.ctex"]
 
 [params]
 
