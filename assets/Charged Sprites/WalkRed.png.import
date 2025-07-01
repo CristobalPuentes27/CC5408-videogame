@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drnrnclrcptjj"
-path="res://.godot/imported/TileSet_RP1_Free (16x16).png-53ad1f84ddaf8a577dc4fb73c1f6ab9d.ctex"
+uid="uid://beeovs1l4f5tw"
+path="res://.godot/imported/WalkRed.png-ef6cb0a6326082da1a90775e75927403.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Reploid_Pack/TileSets/TileSet_RP1_Free (16x16).png"
-dest_files=["res://.godot/imported/TileSet_RP1_Free (16x16).png-53ad1f84ddaf8a577dc4fb73c1f6ab9d.ctex"]
+source_file="res://assets/Charged Sprites/WalkRed.png"
+dest_files=["res://.godot/imported/WalkRed.png-ef6cb0a6326082da1a90775e75927403.ctex"]
 
 [params]
 

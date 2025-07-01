@@ -11,6 +11,7 @@ const JUMP_VELOCITY: float = 400.0
 const MAX_VELOCITY: float = 550.0
 @export var health = 100
 @export var charge: int = 1
+@export var GlobalDash:bool=true     # Enable this to be able to Dash!!
 const default_electric_force = Vector2(0, 1000)
 var electric_force = default_electric_force
 var is_dead: bool = false
@@ -20,8 +21,8 @@ var move_direction: Vector2 = global_transform.x
 var jump_direction: Vector2 = -global_transform.y
 var new_velocity: Vector2 = Vector2(0, 0)
 var coyote_time: float = 0
-const dash_velocity: float = 1200
-const MAX_DASH_TIME: float = 0.15
+const dash_velocity: float = 800
+const MAX_DASH_TIME: float = 0.2
 var dash_time: float = MAX_DASH_TIME
 var is_dashing: bool = false
 var can_dash: bool = false
@@ -73,18 +74,7 @@ func _physics_process(delta: float) -> void:
 		velocity = new_velocity.move_toward(new_velocity + move_direction * direction * SPEED, SPEED)
 	else:
 		velocity = new_velocity
-	
-	if (Input.is_action_just_pressed("dash") and can_dash and direction) or is_dashing:
-		if !is_dashing:
-			dash_direction = direction
-			is_dashing = true
-			can_dash = false
-		velocity = move_direction * dash_direction * dash_velocity
-		dash_time -= delta
-		if dash_time < 0:
-			dash_time = MAX_DASH_TIME
-			is_dashing = false
-	
+
 	# Sprite Direction.
 	if direction < 0:
 		animated_sprite.scale.x = -1
@@ -95,7 +85,10 @@ func _physics_process(delta: float) -> void:
 	var anim_suffix: String = "-inverse" if charge == -1 else ""
 	var anim_to_play: String = ""
 	
-	if is_on_floor():
+	if is_dashing:
+		anim_to_play = "dash" + anim_suffix
+
+	elif is_on_floor():
 		if direction:
 			anim_to_play = "run" + anim_suffix
 		else:
@@ -106,6 +99,18 @@ func _physics_process(delta: float) -> void:
 	# Solo cambia si es diferente para evitar reiniciar innecesariamente la animación
 	if animated_sprite.animation != anim_to_play:
 		animated_sprite.play(anim_to_play)
+	
+	# Dash
+	if (GlobalDash and (Input.is_action_just_pressed("dash") and can_dash and direction) or is_dashing):
+		if !is_dashing:
+			dash_direction = direction
+			is_dashing = true
+			can_dash = false
+		velocity = move_direction * dash_direction * dash_velocity
+		dash_time -= delta
+		if dash_time < 0:
+			dash_time = MAX_DASH_TIME
+			is_dashing = false
 	
 	# Invert charge
 	if Input.is_action_just_pressed("invert"):
@@ -132,7 +137,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func bounce() -> void:
-	new_velocity = JUMP_VELOCITY * jump_direction / 1.5
+	new_velocity = JUMP_VELOCITY * jump_direction 
 
 # Death
 func take_damage():

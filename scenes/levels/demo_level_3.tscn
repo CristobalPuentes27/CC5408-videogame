@@ -66,13 +66,9 @@ tile_set = ExtResource("5_whrl1")
 
 [node name="Platform" parent="plataform" instance=ExtResource("6_b7pw1")]
 position = Vector2(686, -43)
-distancia = Vector2(100, 0)
-speed = 50.0
 
 [node name="Platform2" parent="plataform" instance=ExtResource("6_b7pw1")]
 position = Vector2(565, -135)
-distancia = Vector2(-300, 0)
-speed = 120.0
 
 [node name="Area2D" parent="plataform/Platform2" instance=ExtResource("7_61ptv")]
 vector = Vector2(0, 3000)
@@ -93,13 +89,9 @@ tile_set = ExtResource("5_whrl1")
 
 [node name="Platform3" parent="plataform" instance=ExtResource("6_b7pw1")]
 position = Vector2(86, -35)
-distancia = Vector2(200, 0)
-speed = 80.0
 
 [node name="Platform4" parent="plataform" instance=ExtResource("6_b7pw1")]
 position = Vector2(887, -46)
-distancia = Vector2(210, 0)
-speed = 110.0
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="plataform/Platform4"]
 tile_map_data = PackedByteArray("AAD+////AAABAAAAAAD/////AAABAAAAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAD+//7/AgAAAAEAAAD///7/AgAAAAEAAAAAAP7/AgAAAAEAAAABAP7/AgAAAAEAAAD+/wAAAgACAAEAAAD//wAAAgACAAEAAAAAAAAAAgACAAEAAAABAAAAAgACAAEAAAD9////AgADAAEAAAACAP//AgABAAEAAAA=")

@@ -5,10 +5,12 @@ const LEVEL_BTN = preload("res://scenes/interface/button.tscn")
 @onready var grid: GridContainer = $"../GridContainer"
 
 @export var level_paths: Array[String] = [
-	"res://scenes/levels/demo_level.tscn",
+	"res://scenes/levels/demo_level_1.tscn",
 	"res://scenes/levels/demo_level_2.tscn",
 	"res://scenes/levels/demo_level_3.tscn",
-	"res://scenes/levels/demo_level_4.tscn"
+	"res://scenes/levels/demo_level_4.tscn",
+	"res://scenes/levels/demo_level_5.tscn"
+	
 ]
 
 func _ready() -> void:

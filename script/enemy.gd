@@ -1,11 +1,11 @@
 extends CharacterBody2D
-
 @export var speed = 180.0
 @export var gravity = 1100.0
 @export var acceleration = 1300.0
 @export var jump_velocity = 500.0
 @export var friction = 3500.0
 @export var health = 100
+@export var carga =0 
 var direction = -1
 var is_dead = false
 
@@ -18,8 +18,16 @@ var is_dead = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $Pivot/AnimatedSprite2D
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	if(carga==0):
+		animated_sprite_2d.play("walk")
+	if(carga==1):
+		animated_sprite_2d.play("walkB")
+	if(carga==-1):
+		animated_sprite_2d.play("walkR")
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
