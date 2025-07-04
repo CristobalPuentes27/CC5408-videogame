@@ -27,6 +27,7 @@ var dash_time: float = MAX_DASH_TIME
 var is_dashing: bool = false
 var can_dash: bool = false
 var dash_direction: int
+var bouncing: bool = false
 
 signal charge_changed(new_charge: int, player: Player)
 
@@ -65,6 +66,10 @@ func _physics_process(delta: float) -> void:
 		SoundManager.play_jump_sound()
 		new_velocity = JUMP_VELOCITY * jump_direction
 		coyote_time = 0
+	
+	if bouncing:
+		new_velocity = JUMP_VELOCITY * jump_direction 
+		bouncing = false
 	
 	# Direction.
 	var direction := Input.get_axis("move_left", "move_right") * invert_move
@@ -137,7 +142,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func bounce() -> void:
-	new_velocity = JUMP_VELOCITY * jump_direction 
+	bouncing = true
 
 # Death
 func take_damage():
