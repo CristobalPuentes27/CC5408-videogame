@@ -68,7 +68,7 @@ func _physics_process(delta: float) -> void:
 		coyote_time = 0
 	
 	if bouncing:
-		new_velocity = JUMP_VELOCITY * jump_direction 
+		new_velocity = JUMP_VELOCITY * jump_direction / 2
 		bouncing = false
 	
 	# Direction.
