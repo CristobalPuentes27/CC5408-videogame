@@ -22,9 +22,10 @@ func _ready() -> void:
 		button.focus_entered.connect(_on_focus_entered)
 	resume.grab_focus()
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("retry"):
-		_on_retry_pressed()
+#func _process(delta: float) -> void:
+#	if Input.is_action_just_pressed("retry"):
+#		_on_retry_pressed()
+
 
 func _on_focus_entered() -> void:
 	SoundManager.play_select_sound()
@@ -35,6 +36,9 @@ func _input(event: InputEvent) -> void:
 		visible = get_tree().paused
 		if visible:
 			resume.grab_focus()
+	
+	if event.is_action_pressed("retry"):
+		_on_retry_pressed()
 
 func _on_resume_pressed() -> void:
 	get_tree().paused = false
