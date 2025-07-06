@@ -2,7 +2,7 @@ extends GPUParticles2D
 @export var width =  100
 @export var height = 100
 @export var gravity = Vector2(0,50)
-@onready var polygon_2d: Polygon2D = $".."
+#@onready var polygon_2d: Polygon2D = $".."
 var charge = 1
 
 # Called when the node enters the scene tree for the first time.

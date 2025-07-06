@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyt7wx33qmifj"]
+
+[ext_resource type="Script" uid="uid://c53hfj7rntesv" path="res://script/circular_area.gd" id="1_knedb"]
+[ext_resource type="PackedScene" uid="uid://nuxnaplm734d" path="res://scenes/chargedArea.tscn" id="1_pqhco"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knedb"]
+radius = 130.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8h2ap"]
+radius = 130.0
+
+[node name="CircularArea" type="Area2D"]
+script = ExtResource("1_knedb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_knedb")
+
+[node name="Area2D" parent="." instance=ExtResource("1_pqhco")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_8h2ap")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+modulate = Color(0.833901, 0.924957, 0, 1)
+self_modulate = Color(1, 1, 0, 1)
+target_position = Vector2(0, 150)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

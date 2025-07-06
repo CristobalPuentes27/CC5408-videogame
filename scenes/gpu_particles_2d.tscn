@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://tdi1prstipe1"]
 
 [ext_resource type="Material" uid="uid://bfqo0n626fb6p" path="res://themes/gpu_particles_2d.tres" id="1_a5wyd"]
-[ext_resource type="Script" uid="uid://cdvhq3lnpyhgb" path="res://scenes/field_particles.gd" id="2_adabf"]
+[ext_resource type="Script" uid="uid://cdvhq3lnpyhgb" path="res://script/field_particles.gd" id="2_adabf"]
 
 [node name="Polygon2D" type="ColorRect"]
 clip_children = 1

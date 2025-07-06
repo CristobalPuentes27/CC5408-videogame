@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://r0gyflelodcr"]
+
+[ext_resource type="PackedScene" uid="uid://bny0qsgrk2u5k" path="res://scenes/levels/demo_level_1.tscn" id="1_paw1w"]
+[ext_resource type="PackedScene" uid="uid://cyt7wx33qmifj" path="res://scenes/circular_area.tscn" id="2_paw1w"]
+
+[node name="DemoLevel" instance=ExtResource("1_paw1w")]
+
+[node name="CircularArea" parent="." index="18" instance=ExtResource("2_paw1w")]
+position = Vector2(226, -17)
