@@ -5,8 +5,7 @@ class_name ChargedArea
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print(charge)
-	if body is Player :
+	if body is Player:
 		var player: Player = body
 		player.setForce(vector,charge)
 		player.charge_changed.connect(_on_player_charge_changed)

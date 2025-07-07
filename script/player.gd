@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 		up_direction = jump_direction
 		if global_rotation == angle:
 			enable_rotation = false
-			if angle > 3*PI/4 and angle < 5*PI/4:
+			if angle > 3*PI/4 and angle < 7*PI/4:
 				invert_move = -1
 			else:
 				invert_move = 1
