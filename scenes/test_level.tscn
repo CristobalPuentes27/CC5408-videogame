@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://r0gyflelodcr"]
+
+[ext_resource type="PackedScene" uid="uid://bny0qsgrk2u5k" path="res://scenes/levels/demo_level_1.tscn" id="1_paw1w"]
+[ext_resource type="PackedScene" uid="uid://nuxnaplm734d" path="res://scenes/chargedArea.tscn" id="3_j6w7d"]
+[ext_resource type="PackedScene" uid="uid://yupxr7fbiw5g" path="res://scenes/chargedEnemy.tscn" id="3_x4b8f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4b8f"]
+size = Vector2(127, 211)
+
+[node name="DemoLevel" instance=ExtResource("1_paw1w")]
+
+[node name="Area2D3" parent="." index="18" instance=ExtResource("3_j6w7d")]
+position = Vector2(332, 52)
+vector = Vector2(-5000, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" index="0"]
+position = Vector2(-477.5, -141.5)
+shape = SubResource("RectangleShape2D_x4b8f")
+
+[node name="ChargedEnemy" parent="." index="19" instance=ExtResource("3_x4b8f")]
+position = Vector2(109, 63)
+scale = Vector2(0.5, 0.5)
