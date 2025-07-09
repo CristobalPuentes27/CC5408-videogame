@@ -16,7 +16,6 @@ func _ready() -> void:
 		player.charge_changed.connect(_on_player_charge_changed)
 
 func update_field() -> void:
-	print(Vector3(gravity.x, gravity.y, 0) * charge)
 	
 	var half_size = size / 2.0  # Tamaño del ColorRect dividido en 2
 
@@ -42,6 +41,5 @@ func update_field() -> void:
 		gpu_particles_2d.restart()
 		
 func _on_player_charge_changed(new_charge: int, player: Player) -> void:
-	print(new_charge)
 	player_charge = new_charge
 	update_field()

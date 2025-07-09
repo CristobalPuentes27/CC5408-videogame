@@ -1,9 +1,77 @@
-[gd_scene load_steps=3 format=3 uid="uid://uywjxjkrkhp3"]
+[gd_scene load_steps=11 format=3 uid="uid://uywjxjkrkhp3"]
 
 [ext_resource type="Script" uid="uid://dchpamu26w7wf" path="res://script/victory_zone.gd" id="1_4da8e"]
-[ext_resource type="PackedScene" uid="uid://bw5sla8nskjlg" path="res://scenes/winTablet.tscn" id="2_qkseb"]
+[ext_resource type="Texture2D" uid="uid://bu3qj7fwssndq" path="res://assets/7.png" id="2_qkseb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcw7g"]
+atlas = ExtResource("2_qkseb")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0dkk"]
+atlas = ExtResource("2_qkseb")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ehax"]
+atlas = ExtResource("2_qkseb")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_be2e4"]
+atlas = ExtResource("2_qkseb")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jt24n"]
+atlas = ExtResource("2_qkseb")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8xi3"]
+atlas = ExtResource("2_qkseb")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrpp5"]
+atlas = ExtResource("2_qkseb")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5prn6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcw7g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0dkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ehax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_be2e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jt24n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8xi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrpp5")
+}],
+"loop": false,
+"name": &"open",
+"speed": 9.0
+}]
 
 [node name="VictoryZone" type="Area2D"]
 script = ExtResource("1_4da8e")
 
-[node name="Node2D" parent="." instance=ExtResource("2_qkseb")]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -32)
+sprite_frames = SubResource("SpriteFrames_5prn6")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Timer" type="Timer" parent="."]
