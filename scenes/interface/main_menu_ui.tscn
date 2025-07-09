@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctnfbof2m7iux"]
+[gd_scene load_steps=4 format=3 uid="uid://ctnfbof2m7iux"]
 
 [ext_resource type="Theme" uid="uid://dvrlrw5011u4k" path="res://themes/main_menu_theme.tres" id="1_4pl3l"]
 [ext_resource type="Script" uid="uid://dht25afr85k8y" path="res://script/main_menu_ui.gd" id="2_4pl3l"]
+[ext_resource type="PackedScene" uid="uid://cg7hlpaf1rlqj" path="res://scenes/interface/background.tscn" id="3_bf2a3"]
 
 [node name="Main Menu UI" type="Control"]
 layout_mode = 3
@@ -20,6 +21,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" parent="PanelContainer" instance=ExtResource("3_bf2a3")]
+position = Vector2(-679, 458)
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
