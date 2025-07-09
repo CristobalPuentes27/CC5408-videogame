@@ -1,15 +1,23 @@
 [gd_scene load_steps=3 format=3 uid="uid://tdi1prstipe1"]
 
-[ext_resource type="Material" uid="uid://bfqo0n626fb6p" path="res://themes/gpu_particles_2d.tres" id="1_a5wyd"]
 [ext_resource type="Script" uid="uid://cdvhq3lnpyhgb" path="res://script/field_particles.gd" id="2_adabf"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a5wyd"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(50, 50, 0)
+gravity = Vector3(0, 50, 0)
 
 [node name="Polygon2D" type="ColorRect"]
 clip_children = 1
 offset_right = 100.0
 offset_bottom = 100.0
+script = ExtResource("2_adabf")
+gravity = Vector2(0, 200)
+density = null
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(50, 50)
 amount = 200
-visibility_rect = Rect2(-200, -200, 400, 400)
-process_material = ExtResource("1_a5wyd")
-script = ExtResource("2_adabf")
+visibility_rect = Rect2(-50, -50, 50, 50)
+process_material = SubResource("ParticleProcessMaterial_a5wyd")
