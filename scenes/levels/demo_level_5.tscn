@@ -179,6 +179,7 @@ shape = SubResource("RectangleShape2D_oa7b3")
 
 [node name="Platform3" parent="." instance=ExtResource("8_hsxe1")]
 position = Vector2(13, 130)
+distancia = Vector2(220, 0)
 
 [node name="Area2D" parent="." instance=ExtResource("7_kvej8")]
 
