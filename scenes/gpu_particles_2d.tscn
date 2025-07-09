@@ -14,7 +14,6 @@ offset_right = 100.0
 offset_bottom = 100.0
 script = ExtResource("2_adabf")
 gravity = Vector2(0, 200)
-density = null
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(50, 50)

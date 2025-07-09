@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://c2hc1q3ykw7di"]
+[gd_scene load_steps=22 format=4 uid="uid://c2hc1q3ykw7di"]
 
 [ext_resource type="PackedScene" uid="uid://bc0vrgrb8y5h4" path="res://scenes/fondo.tscn" id="1_118ns"]
 [ext_resource type="PackedScene" uid="uid://cb3wju8hkg1vg" path="res://scenes/player.tscn" id="1_gysss"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://7oo44rorgnj" path="res://scenes/platform.tscn" id="8_hsxe1"]
 [ext_resource type="PackedScene" uid="uid://dh5syx86yqtgu" path="res://scenes/Deathzone.tscn" id="9_slyfk"]
 [ext_resource type="PackedScene" uid="uid://uywjxjkrkhp3" path="res://scenes/victory_zone.tscn" id="10_slyfk"]
+[ext_resource type="PackedScene" uid="uid://tdi1prstipe1" path="res://scenes/gpu_particles_2d.tscn" id="11_oa7b3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hsxe1"]
 size = Vector2(68.6101, 173.222)
@@ -57,10 +58,10 @@ tile_set = ExtResource("5_hsxe1")
 [node name="TileMapLayer4" type="TileMapLayer" parent="Node2D2"]
 tile_set = ExtResource("5_oa7b3")
 
-[node name="PLayer" parent="." instance=ExtResource("1_gysss")]
+[node name="Player" parent="." instance=ExtResource("1_gysss")]
 position = Vector2(-26, 240)
 
-[node name="Camera2D" type="Camera2D" parent="PLayer"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
 zoom = Vector2(2, 2)
 
@@ -89,6 +90,12 @@ position = Vector2(-0.952881, -129.549)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_hsxe1")
 
+[node name="Polygon2D" parent="Enemy2" instance=ExtResource("11_oa7b3")]
+offset_left = -32.0
+offset_top = -220.0
+offset_right = 40.0
+offset_bottom = -45.0
+
 [node name="Enemy3" parent="." instance=ExtResource("6_708t6")]
 position = Vector2(217, 273)
 rotation = 3.14159
@@ -111,6 +118,12 @@ position = Vector2(3.81164, -135.335)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_hsxe1")
 
+[node name="Polygon2D" parent="Enemy4" instance=ExtResource("11_oa7b3")]
+offset_left = -32.0
+offset_top = -220.0
+offset_right = 40.0
+offset_bottom = -45.0
+
 [node name="Enemy5" parent="." instance=ExtResource("6_708t6")]
 position = Vector2(590, 236)
 scale = Vector2(0.524704, 0.532012)
@@ -124,6 +137,12 @@ vector = Vector2(0, 2000)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy5/Area2D"]
 position = Vector2(3.81171, -131.576)
 shape = SubResource("RectangleShape2D_hsxe1")
+
+[node name="Polygon2D" parent="Enemy5" instance=ExtResource("11_oa7b3")]
+offset_left = -32.0
+offset_top = -220.0
+offset_right = 40.0
+offset_bottom = -45.0
 
 [node name="Enemy6" parent="." instance=ExtResource("6_708t6")]
 position = Vector2(978, 148)
@@ -142,6 +161,13 @@ position = Vector2(-0.952881, -81.2952)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_slyfk")
 
+[node name="Polygon2D" parent="Enemy6" instance=ExtResource("11_oa7b3")]
+offset_left = -32.0
+offset_top = -126.0
+offset_right = 34.0
+offset_bottom = -45.0
+gravity = Vector2(0, -200)
+
 [node name="Enemy7" parent="." instance=ExtResource("6_708t6")]
 position = Vector2(1046, 147)
 scale = Vector2(0.524704, 0.532012)
@@ -158,6 +184,13 @@ charge = -1
 position = Vector2(-1.90552, -75.9058)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_e0ry7")
+
+[node name="Polygon2D" parent="Enemy7" instance=ExtResource("11_oa7b3")]
+offset_left = -32.0
+offset_top = -126.0
+offset_right = 30.0
+offset_bottom = -45.0
+gravity = Vector2(0, -200)
 
 [node name="Enemy8" parent="." instance=ExtResource("6_708t6")]
 position = Vector2(1124, 148)
@@ -176,6 +209,13 @@ charge = -1
 position = Vector2(-1.90574, -92.8961)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_oa7b3")
+
+[node name="Polygon2D" parent="Enemy8" instance=ExtResource("11_oa7b3")]
+offset_left = -32.0
+offset_top = -126.0
+offset_right = 34.0
+offset_bottom = -45.0
+gravity = Vector2(0, -200)
 
 [node name="Platform3" parent="." instance=ExtResource("8_hsxe1")]
 position = Vector2(13, 130)
@@ -201,3 +241,9 @@ visible = false
 position = Vector2(-3, 3)
 shape = SubResource("RectangleShape2D_rwajf")
 debug_color = Color(0, 0.623873, 0.533922, 0.42)
+
+[node name="Polygon2D" parent="." instance=ExtResource("11_oa7b3")]
+offset_left = 885.0
+offset_top = -15.0
+offset_right = 1123.0
+offset_bottom = 29.0
