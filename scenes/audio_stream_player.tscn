@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://87mfi44bmi3r"]
+
+[ext_resource type="AudioStream" uid="uid://2m2a1o4q0smx" path="res://music/chibi-robot-b.ogg" id="1_nbeep"]
+[ext_resource type="Script" uid="uid://c6u7df8u3my55" path="res://script/audio_stream_player.gd" id="2_6eoa2"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_nbeep")
+script = ExtResource("2_6eoa2")

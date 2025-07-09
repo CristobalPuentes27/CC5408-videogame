@@ -22,6 +22,7 @@ boot_splash/minimum_display_time=1800
 [autoload]
 
 SoundManager="*res://script/sound_manager.gd"
+GlobalAudioStreamPlayer="*res://scenes/audio_stream_player.tscn"
 
 [input]
 
