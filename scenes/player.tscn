@@ -428,7 +428,7 @@ height = 28.0
 default_font = ExtResource("3_qhqgy")
 default_font_size = 33
 
-[node name="PLayer" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 collision_mask = 22
 script = ExtResource("1_3vyb7")
 
